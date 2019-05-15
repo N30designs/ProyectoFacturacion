@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using facturacion.Model;
 
-
+/*
 namespace facturacion.Data
 {
     class FacturacionInitializer : DropCreateDatabaseIfModelChanges<FacturacionContext>
@@ -50,3 +50,4 @@ namespace facturacion.Data
 
     }
 }
+*/
