@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CED9F099-5C38-4D10-81CA-773A587CF19A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>prueba2</RootNamespace>
-    <AssemblyName>prueba2</AssemblyName>
+    <RootNamespace>facturacion</RootNamespace>
+    <AssemblyName>facturacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,15 +52,24 @@
   <ItemGroup>
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
-    <Compile Include="Model\Articulo.cs" />
+    <Compile Include="Model\DetallePedido.cs" />
+    <Compile Include="Model\Empleado.cs" />
+    <Compile Include="Model\EstadoPedido.cs" />
+    <Compile Include="Model\Impuesto.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Producto.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Direccion.cs" />
     <Compile Include="Model\Empresa.cs" />
     <Compile Include="Model\Albaran.cs" />
     <Compile Include="Model\Factura.cs" />
-    <Compile Include="Model\LineaVenta.cs" />
+    <Compile Include="Model\Moneda.cs" />
+    <Compile Include="Model\Pais.cs" />
     <Compile Include="Model\Poblacion.cs" />
-    <Compile Include="Model\Venta.cs" />
+    <Compile Include="Model\Proveedor.cs" />
+    <Compile Include="Model\TipoCliente.cs" />
+    <Compile Include="Model\Transportista.cs" />
+    <Compile Include="Model\Ubicaciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,6 +81,12 @@
   <ItemGroup>
     <Folder Include="Business\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Others\Diagrama1405.jpg" />
+    <Content Include="Others\Diagrama1505.jpg" />
+    <Content Include="Others\Diagrama15052.jpg" />
+    <Content Include="Others\DiagramaInicial.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

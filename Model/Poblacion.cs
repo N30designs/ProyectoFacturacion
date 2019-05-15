@@ -1,22 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    enum tipoPoblacion {poblacion, municipio}
+
+    enum tipoPoblacion {Aldea, Pueblo, Ciudad, Provincia}
+
 
     class Poblacion
     {
         [Key, MaxLength(30)]
-        public int ID_Poblacion { get; set; }
+        public int Poblacion_ID { get; set; }
 
-        [Required, MaxLength(150)]
+        [Required, MaxLength(100)]
         public string Nombre { get; set; }
 
         [Required]
         public tipoPoblacion Tipo { get; set; }
 
         [Required, MaxLength(5)]
-        public int CPostal { get; set; }
-        public virtual Poblacion Padre { get; set; }
+        public string  Cpostal { get; set; }
+
+        [MaxLength(30)]
+        public int Padre { get; set; }
     }
 }

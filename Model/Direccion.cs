@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
@@ -8,7 +9,7 @@ namespace facturacion.Model
     class Direccion
     {
         [Key, MaxLength(30)]
-        public int DireccionId { get; set; }
+        public int Direcccion_ID { get; set; }
 
         [Required]
         public tipoDireccion Tipo { get; set; }
@@ -23,6 +24,9 @@ namespace facturacion.Model
         public int Bloque { get; set; }
 
         [MaxLength(2)]
+        public int Portal { get; set; }
+
+        [MaxLength(2)]
         public int Escalera { get; set; }
 
         [MaxLength(2)]
@@ -34,10 +38,25 @@ namespace facturacion.Model
         [MaxLength(10)]
         public string Puerta { get; set; }
 
-        [Required, MaxLength(5)]
-        public int Cpostal { get; set; }
+        [Required, MaxLength(9)]
+        public string Telefono { get; set; }
+
+        [MaxLength(9)]
+        public string Telefono2 { get; set; }
+
+        [MaxLength(9)]
+        public string Fax { get; set; }
+
+        [Required]
+        public DateTime Creacion { get; set; }
+
+        [Timestamp]
+        public DateTime Modificacion { get; set; }
 
         public virtual Cliente ID_Cliente { get; set; }
+
+        public virtual Poblacion Poblacion { get; set; }
+        
 
     }
 }
