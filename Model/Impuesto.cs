@@ -18,5 +18,8 @@ namespace facturacion.Model
 
         public virtual ICollection<Pais> Pais { get; set; }
 
+        public virtual ICollection<Factura> Facturas { get; set; }
+
+        public virtual ICollection<Pedido> Pedidos { get; set; }
     }
 }

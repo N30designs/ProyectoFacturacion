@@ -50,5 +50,7 @@ namespace facturacion.Model
         public virtual Empleado Vendedor { get; set; }
 
         public virtual Empleado Preparador { get; set; }
+
+        public virtual ICollection<Pago> Pagos { get; set; }
     }
 }

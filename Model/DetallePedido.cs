@@ -31,7 +31,7 @@ namespace facturacion.Model
         [MaxLength(100)]
         public string Serie { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required, Range(0, 99999.999)]
         public float Peso { get; set; }
 
         public DateTime FechaFabricacion { get; set; }

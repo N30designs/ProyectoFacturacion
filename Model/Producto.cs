@@ -24,7 +24,7 @@ namespace facturacion.Model
 
         public DateTime FechaFabricacion { get; set; }
 
-        [Range(0,99999.99)]
+        [Range(0,99999.999)]
         public float Peso { get; set; }
         
         [Range(0,999999.99)]
