@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CED9F099-5C38-4D10-81CA-773A587CF19A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>facturacion</RootNamespace>
     <AssemblyName>facturacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -41,6 +44,12 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Simplify.Resources">
+      <HintPath>packages\Simplify.Resources.1.0.0\lib\net40\Simplify.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9, processorArchitecture=MSIL">
+      <HintPath>packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -82,6 +91,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Series.cs" />
+    <Compile Include="Views\FormClientesAñadir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientesAñadir.Designer.cs">
+      <DependentUpon>FormClientesAñadir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,9 +116,13 @@
     <Content Include="Others\Diagrama1405.jpg" />
     <Content Include="Others\Diagrama1505.jpg" />
     <Content Include="Others\Diagrama15052.jpg" />
+    <Content Include="Others\Diagrama16051.jpg" />
     <Content Include="Others\DiagramaInicial.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Views\FormClientesAñadir.resx">
+      <DependentUpon>FormClientesAñadir.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>

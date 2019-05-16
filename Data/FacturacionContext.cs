@@ -12,11 +12,30 @@ namespace facturacion.Data
             
         }
 
-       
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<Direccion> Direccion { get; set; }
-        public virtual DbSet<Factura> Factura { get; set; }
+        public virtual DbSet<Albaran> Albaranes { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<DetalleFactura> DetalleFacturas{ get; set; }
+        public virtual DbSet<DetallePedido> DetallePedidos { get; set; }
+        public virtual DbSet<Direccion> Direcciones { get; set; }
+        public virtual DbSet<Empleado> Empleados { get; set; }
+        public virtual DbSet<Empresa> Empresas { get; set; }
+        public virtual DbSet<EstadoPedido> EstadoPedidos { get; set; }
+        public virtual DbSet<Factura> Facturas { get; set; }
+        public virtual DbSet<Impuesto> Impuestos { get; set; }
+        public virtual DbSet<Moneda> Monedas { get; set; }
+        public virtual DbSet<Pago> Pagos { get; set; }
+        public virtual DbSet<Pais> Paises { get; set; }
+        public virtual DbSet<Pedido> Pedidos { get; set; }
+        public virtual DbSet<Poblacion> Poblaciones { get; set; }
+        public virtual DbSet<Producto> Productos { get; set; }
+        public virtual DbSet<Proveedor> Proveedores { get; set; }
+        public virtual DbSet<Series> Series { get; set; }
+        public virtual DbSet<TipoCliente> Tipoclientes { get; set; }
+        public virtual DbSet<TipoPago> TipoPagos { get; set; }
+        public virtual DbSet<Transportista> Transportistas{ get; set; }
+        public virtual DbSet<Ubicaciones> Ubicaciones { get; set; }
+
 
     }
 }
