@@ -65,6 +65,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Clientes.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
@@ -108,10 +109,30 @@
     <None Include="App.config" />
     <None Include="Others\PequeñoProyecto.vpp" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\facturacion.Model.Albaran.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Cliente.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.DetalleFactura.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.DetallePedido.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Direccion.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Empleado.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Empresa.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.EstadoPedido.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Factura.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Impuesto.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Moneda.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Pago.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Pais.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Pedido.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Poblacion.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Producto.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Proveedor.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Series.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.TipoCliente.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.TipoPago.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Transportista.datasource" />
+    <None Include="Properties\DataSources\facturacion.Model.Ubicaciones.datasource" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Others\Diagrama1405.jpg" />
     <Content Include="Others\Diagrama1505.jpg" />
