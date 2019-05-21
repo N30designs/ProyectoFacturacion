@@ -1,18 +1,13 @@
 ﻿using facturacion.Model;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
 namespace facturacion.Data
 {
     class FacturacionContext : DbContext
     {
-        public FacturacionContext() : base("Prueba2")
-        {
-            //Database.SetInitializer(new FacturacionContext());
-            
-        }
-
-
+        
         public virtual DbSet<Albaran> Albaranes { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleFactura> DetalleFacturas{ get; set; }
@@ -36,6 +31,21 @@ namespace facturacion.Data
         public virtual DbSet<Transportista> Transportistas{ get; set; }
         public virtual DbSet<Ubicaciones> Ubicaciones { get; set; }
 
+        public FacturacionContext() : base("Facturacion")
+        {
+            //Database.SetInitializer(new FacturacionContext());
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Cliente>().Map(m =>
+            {
+                m.Properties<Cliente>(p => new { p.Bloque, p.Portal });
+                
+            });
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace facturacion
         [STAThread]
         static void Main()
         {
+            //consola.Ejecutar();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

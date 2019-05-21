@@ -4,27 +4,29 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class Factura
+    /// <summary>
+    /// Modelo encargado de crear las facturas de los pedidos, se relacionará con empresa, cliente, pago e impuestos.
+    /// </summary>
+   public class Factura
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int FacturaId { get; set; }
 
         [Required]
         public DateTime Fecha { get; set; }
         
-        [Required, Range(0,999999.99)]
+        [Required]
         public Decimal Importe { get; set; }
 
-        [MaxLength(2)]
+       
         public int Descuento_Factura { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal ImporteBruto { get; set; }
 
-        [Range(0, 999999.99)]
         public decimal ImporteRetencion { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal Total { get; set; }
 
         public string Nota { get; set; }
@@ -32,7 +34,7 @@ namespace facturacion.Model
         [Required]
         public DateTime Creacion { get; set; }
         
-        [Timestamp]
+      
         public DateTime Modificacion { get; set; }
                           
 

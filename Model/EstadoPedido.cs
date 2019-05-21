@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class EstadoPedido
+    /// <summary>
+    /// Clase que representa el estado de los pedidos, se relacionará con el modelo pedidos. 
+    /// </summary>
+  public  class EstadoPedido
     {
         
-        [Key, MaxLength(30)]
+        [Key]
         public int EstadoPedidoID { get; set; }
 
         [Required, MaxLength(100)]

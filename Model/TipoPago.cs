@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace facturacion.Model
 {
-    class TipoPago
+    /// <summary>
+    /// Modelo encargado de la gestión de los distintos tipos de pago
+    /// </summary>
+    public class TipoPago
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int TipoPagoID { get; set; }
 
         [Required, MaxLength (50)]

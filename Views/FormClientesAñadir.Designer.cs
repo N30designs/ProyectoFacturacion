@@ -52,7 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lDireccion = new System.Windows.Forms.Label();
             this.tDireccion = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tPuerta = new System.Windows.Forms.TextBox();
             this.lPuerta = new System.Windows.Forms.Label();
             this.tFax = new System.Windows.Forms.TextBox();
             this.tTelefono2 = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             this.tProvincia = new System.Windows.Forms.TextBox();
             this.TPostal = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tPlanta = new System.Windows.Forms.TextBox();
             this.lPlanta = new System.Windows.Forms.Label();
             this.tPortal = new System.Windows.Forms.TextBox();
             this.lPortal = new System.Windows.Forms.Label();
@@ -78,12 +78,12 @@
             this.lIban = new System.Windows.Forms.Label();
             this.lDiasPago = new System.Windows.Forms.Label();
             this.lDescuento = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tIrpf = new System.Windows.Forms.TextBox();
             this.tBic = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.tIban = new System.Windows.Forms.TextBox();
             this.tDiasPago = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tDescuento = new System.Windows.Forms.TextBox();
             this.btAñadirCliente = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.entityConnection1 = new System.Data.Entity.Core.EntityClient.EntityConnection();
@@ -237,7 +237,7 @@
             this.gDireccion.Controls.Add(this.label2);
             this.gDireccion.Controls.Add(this.lDireccion);
             this.gDireccion.Controls.Add(this.tDireccion);
-            this.gDireccion.Controls.Add(this.textBox8);
+            this.gDireccion.Controls.Add(this.tPuerta);
             this.gDireccion.Controls.Add(this.lPuerta);
             this.gDireccion.Controls.Add(this.tFax);
             this.gDireccion.Controls.Add(this.tTelefono2);
@@ -246,7 +246,7 @@
             this.gDireccion.Controls.Add(this.tProvincia);
             this.gDireccion.Controls.Add(this.TPostal);
             this.gDireccion.Controls.Add(this.textBox2);
-            this.gDireccion.Controls.Add(this.textBox6);
+            this.gDireccion.Controls.Add(this.tPlanta);
             this.gDireccion.Controls.Add(this.lPlanta);
             this.gDireccion.Controls.Add(this.tPortal);
             this.gDireccion.Controls.Add(this.lPortal);
@@ -342,12 +342,12 @@
             this.tDireccion.Size = new System.Drawing.Size(435, 20);
             this.tDireccion.TabIndex = 1;
             // 
-            // textBox8
+            // tPuerta
             // 
-            this.textBox8.Location = new System.Drawing.Point(719, 37);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(47, 20);
-            this.textBox8.TabIndex = 1;
+            this.tPuerta.Location = new System.Drawing.Point(719, 37);
+            this.tPuerta.Name = "tPuerta";
+            this.tPuerta.Size = new System.Drawing.Size(47, 20);
+            this.tPuerta.TabIndex = 1;
             // 
             // lPuerta
             // 
@@ -407,12 +407,12 @@
             this.textBox2.Size = new System.Drawing.Size(285, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // textBox6
+            // tPlanta
             // 
-            this.textBox6.Location = new System.Drawing.Point(666, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(47, 20);
-            this.textBox6.TabIndex = 1;
+            this.tPlanta.Location = new System.Drawing.Point(666, 37);
+            this.tPlanta.Name = "tPlanta";
+            this.tPlanta.Size = new System.Drawing.Size(47, 20);
+            this.tPlanta.TabIndex = 1;
             // 
             // lPlanta
             // 
@@ -495,12 +495,12 @@
             this.gOtros.Controls.Add(this.lIban);
             this.gOtros.Controls.Add(this.lDiasPago);
             this.gOtros.Controls.Add(this.lDescuento);
-            this.gOtros.Controls.Add(this.textBox3);
+            this.gOtros.Controls.Add(this.tIrpf);
             this.gOtros.Controls.Add(this.tBic);
             this.gOtros.Controls.Add(this.textBox4);
             this.gOtros.Controls.Add(this.tIban);
             this.gOtros.Controls.Add(this.tDiasPago);
-            this.gOtros.Controls.Add(this.textBox1);
+            this.gOtros.Controls.Add(this.tDescuento);
             this.gOtros.Location = new System.Drawing.Point(3, 289);
             this.gOtros.Name = "gOtros";
             this.gOtros.Size = new System.Drawing.Size(974, 196);
@@ -562,12 +562,12 @@
             this.lDescuento.TabIndex = 0;
             this.lDescuento.Text = "% Descuento";
             // 
-            // textBox3
+            // tIrpf
             // 
-            this.textBox3.Location = new System.Drawing.Point(607, 34);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
-            this.textBox3.TabIndex = 1;
+            this.tIrpf.Location = new System.Drawing.Point(607, 34);
+            this.tIrpf.Name = "tIrpf";
+            this.tIrpf.Size = new System.Drawing.Size(135, 20);
+            this.tIrpf.TabIndex = 1;
             // 
             // tBic
             // 
@@ -598,12 +598,12 @@
             this.tDiasPago.Size = new System.Drawing.Size(55, 20);
             this.tDiasPago.TabIndex = 1;
             // 
-            // textBox1
+            // tDescuento
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(67, 20);
-            this.textBox1.TabIndex = 1;
+            this.tDescuento.Location = new System.Drawing.Point(9, 34);
+            this.tDescuento.Name = "tDescuento";
+            this.tDescuento.Size = new System.Drawing.Size(67, 20);
+            this.tDescuento.TabIndex = 1;
             // 
             // btAñadirCliente
             // 
@@ -660,9 +660,9 @@
         private System.Windows.Forms.TextBox tDireccion;
         private System.Windows.Forms.TextBox tNumero;
         private System.Windows.Forms.Label lNumero;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox tPuerta;
         private System.Windows.Forms.Label lPuerta;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tPlanta;
         private System.Windows.Forms.Label lPlanta;
         private System.Windows.Forms.TextBox tPortal;
         private System.Windows.Forms.Label lPortal;
@@ -692,9 +692,9 @@
         private System.Windows.Forms.TextBox tBic;
         private System.Windows.Forms.TextBox tIban;
         private System.Windows.Forms.TextBox tDiasPago;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tDescuento;
         private System.Windows.Forms.Label lIrpf;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tIrpf;
         private System.Windows.Forms.Label lObservaciones;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ComboBox cTipoCliente;

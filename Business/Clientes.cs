@@ -1,22 +1,44 @@
 ﻿using facturacion.Model;
 using facturacion.Data;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Validation;
 
 namespace facturacion.Business
 {
-    class Clientes
+    public class Clientes : IClients
     {        
         
-        public static void nuevoCliente(Cliente cliente)
+        public static void NuevoCliente(Cliente cliente)
         {
-            FacturacionContext context = new FacturacionContext();
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                try
+                {
+                    //var client = context.Clientes.Create();
+                    //client <- cliente
+                    cliente.Creacion = DateTime.Now;
+                    cliente.Modificacion = DateTime.Now;
+                    context.Clientes.Add(cliente);
 
-            cliente.Creacion = DateTime.Now;
+                    context.SaveChanges();
+                }catch(DbEntityValidationException ex)
+                {
+                    // Retrieve the error messages as a list of strings.
+                    var errorMessages = ex.EntityValidationErrors
+                            .SelectMany(x => x.ValidationErrors)
+                            .Select(x => x.ErrorMessage);
 
-            context.Clientes.Add(cliente); 
+                    // Join the list to a single string.
+                    var fullErrorMessage = string.Join("; ", errorMessages);
+
+                    // Combine the original exception message with the new one.
+                    var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
+
+                    // Throw a new DbEntityValidationException with the improved exception message.
+                    throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+                }
+            }
         }
         
         /*public static ICollection getTipos()
@@ -37,14 +59,22 @@ namespace facturacion.Business
             
         }*/
 
-        public static TipoCliente getTipoCliente(int id)
+        public static TipoCliente GetTipoCliente(int id)
         {
             FacturacionContext contextTiposClientes = new FacturacionContext();
             TipoCliente tipo = contextTiposClientes.Tipoclientes.Where(tc => tc.Tipo_Cliente_ID == id).FirstOrDefault();
             return tipo;
 
         }
-        
 
+        public Cliente AddClient(string name, string fiscalId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Cliente FindClient(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

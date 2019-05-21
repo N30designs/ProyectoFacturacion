@@ -4,25 +4,28 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 namespace facturacion.Model
 {
-    class DetallePedido
+    /// <summary>
+    /// Modelo que crea cada línea de pedido, el modelo pedido dependerá de él.
+    /// </summary>
+    public class DetallePedido
     {
 
-        [Key, MaxLength(30)]
+        [Key]
         public int DetallePedidoID { get; set; }
 
-        [Required, MaxLength(4)]
+        [Required]
         public int Cantidad { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal Importe { get; set; }
 
-        [MaxLength(2)]
+        
         public int ArticuloDescuento { get; set; }
 
-        [MaxLength(2)]
+        
         public int LineaDescuento { get; set; }
 
-        [Range(0, 99999.99)]
+        
         public Decimal ImporteBruto { get; set; }
 
         [MaxLength(100)]
@@ -31,24 +34,23 @@ namespace facturacion.Model
         [MaxLength(100)]
         public string Serie { get; set; }
 
-        [Required, Range(0, 99999.999)]
+        [Required]
         public float Peso { get; set; }
 
         public DateTime FechaFabricacion { get; set; }
 
-        [Required, MaxLength(2)]
+        [Required]
         public int ImpuestoPorcentaje { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal ImpuestoImporte { get; set; }
 
-        [MaxLength(2)]
         public int ImpuestoAsociadoPorcentaje { get; set; }
 
-        [Range(0, 999999.99)]
+        
         public decimal ImpuestoAsociadoImporte { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal LineaTotal { get; set; }
 
         public virtual Producto Producto { get; set; }

@@ -4,9 +4,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace facturacion.Model
 {
-    class Empresa
+    /// <summary>
+    /// Modelo que contiene la información de las distintas empresas disponibles.
+    /// Los encabezados de documentos harán referencia a ellas.
+    /// </summary>
+    public class Empresa
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int ID_EMPRESA { get; set; }
 
         [Required, MaxLength(100)]
@@ -18,13 +22,13 @@ namespace facturacion.Model
         [Index(IsUnique = true), Required, MaxLength(10)]
         public string cif { get; set; }
 
-        [MaxLength(4)]
+        
         public int Inscripcion { get; set; }
 
-        [MaxLength(4)]
+       
         public int Tomo { get; set; }
 
-        [MaxLength(4)]
+        
         public int Folio { get; set; }
 
         [MaxLength(50)]
@@ -34,51 +38,51 @@ namespace facturacion.Model
         [Required, MaxLength(100)]
         public string Domicilio { get; set; }
 
-        [Required, MaxLength(4)]
+        [Required]
         public int Numero { get; set; }
 
-        [MaxLength(2)]
+       
         public int Bloque { get; set; }
 
-        [MaxLength(2)]
+       
         public int Portal { get; set; }
 
-        [MaxLength(2)]
+        
         public int Escalera { get; set; }
 
-        [Required, MaxLength(2)]
+        [Required]
         public int Planta{ get; set; }
         
         [MaxLength(10)]
         public string Puerta { get; set; }
                           
-        [MaxLength(9), Phone]
+        [Phone]
         public int Fax { get; set; }
 
         [Required, MaxLength(100)]
         public string Administrador { get; set; }
 
-        [Required, MaxLength(9), Phone]
+        [Required, Phone]
         public string Telefono { get; set; }
 
-        [MaxLength(9), Phone]
+        [Phone]
         public string Telefono2 { get; set; }
 
         [Required]
         public DateTime FechaAlta { get; set; }
 
-        [Required]
+        
         public bool RegimenEquivalencia { get; set; }
 
         [MaxLength(100)]
         public string Web { get; set; }
 
-        [MaxLength(100), EmailAddress]
+        [EmailAddress]
         public string Email { get; set; }
 
         public DateTime Creacion { get; set; }
 
-        [Timestamp]
+        
         public DateTime Modificacion { get; set; }
 
 

@@ -4,9 +4,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class Pago
+    /// <summary>
+    /// Modelo utilizado para gestionar los pagos realizados.
+    /// </summary>
+    public class Pago
     {
-        [Key,MaxLength(30) ]
+        [Key]
         public int PagoID { get; set; }
 
         public DateTime FechaPago { get; set; }

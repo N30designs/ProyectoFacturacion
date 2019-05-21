@@ -5,9 +5,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class Producto
+    /// <summary>
+    /// Modelo encargado de gestionar los distintos productos, está relacionado
+    /// con los modelos Proveedor e Impuesto.
+    /// </summary>
+    public class Producto
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int Producto_ID { get; set; }
 
         [Required, MaxLength(250)]
@@ -24,29 +28,29 @@ namespace facturacion.Model
 
         public DateTime FechaFabricacion { get; set; }
 
-        [Range(0,99999.999)]
+       
         public float Peso { get; set; }
         
-        [Range(0,999999.99)]
+        
         public decimal PrecioCompra { get; set; }
 
-        [Range(0, 999999.99)]
+        
         public decimal PrecioVenta { get; set; }
 
-        [MaxLength(2)]
+       
         public int Margen { get; set; }
 
         [MaxLength(1000)]
         public string Descripcion { get; set; }
 
 
-        [MaxLength(2)]
+        
         public int Articulo_Descuento { get; set; }
 
         [MaxLength(1000)]
         public string Observaciones { get; set; }
 
-        [MaxLength(13)]
+        
         public int EAN13 { get; set; }
 
 

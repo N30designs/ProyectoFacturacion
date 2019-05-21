@@ -4,33 +4,36 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class DetalleFactura
+    /// <summary>
+    /// Modelo que crea cada línea de factura con todos sus detalles, el modelo factura dependerá de él.
+    /// </summary>
+    public class DetalleFactura
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int DetalleFacturaID { get; set; }
 
         [Required, MaxLength(100)]
         public string Concepto { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal Importe { get; set; }
 
-        [MaxLength(2)]
+        
         public int Descuento { get; set; }
 
-        [Required, Range(0,999999.99)]
+        [Required]
         public decimal ImporteBruto { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal ImporteImpuesto { get; set; }
 
-        [MaxLength(2)]
+        
         public int PorcentajeImpuestoAsociado { get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal ImporteImpuestoAsociado{ get; set; }
 
-        [Required, Range(0, 999999.99)]
+        [Required]
         public decimal Total { get; set; }
 
         [MaxLength(50)]
@@ -39,7 +42,7 @@ namespace facturacion.Model
         [MaxLength(100)]
         public string Serie { get; set; }
 
-        [Range(0,99999.999)]
+        
         public decimal Peso { get; set; }
 
         public DateTime Fecha_Fabricacion { get; set; }

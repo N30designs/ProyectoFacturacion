@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CED9F099-5C38-4D10-81CA-773A587CF19A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>facturacion</RootNamespace>
     <AssemblyName>facturacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -66,8 +66,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\Clientes.cs" />
+    <Compile Include="Business\IClients.cs" />
+    <Compile Include="consola.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Migrations\201905211004152_InitialCreate.cs" />
+    <Compile Include="Migrations\201905211004152_InitialCreate.Designer.cs">
+      <DependentUpon>201905211004152_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905211019476_NuevoCampo.cs" />
+    <Compile Include="Migrations\201905211019476_NuevoCampo.Designer.cs">
+      <DependentUpon>201905211019476_NuevoCampo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905211042143_bloqueOpcional.cs" />
+    <Compile Include="Migrations\201905211042143_bloqueOpcional.Designer.cs">
+      <DependentUpon>201905211042143_bloqueOpcional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
     <Compile Include="Model\Pago.cs" />
     <Compile Include="Model\TipoPago.cs" />
@@ -141,6 +157,15 @@
     <Content Include="Others\DiagramaInicial.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905211004152_InitialCreate.resx">
+      <DependentUpon>201905211004152_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905211019476_NuevoCampo.resx">
+      <DependentUpon>201905211019476_NuevoCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905211042143_bloqueOpcional.resx">
+      <DependentUpon>201905211042143_bloqueOpcional.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesAñadir.resx">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
     </EmbeddedResource>

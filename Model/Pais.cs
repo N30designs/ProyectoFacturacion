@@ -2,10 +2,13 @@
 
 namespace facturacion.Model
 {
-    class Pais
+    /// <summary>
+    /// Modelo encargado de gestionar los distintos paises, se encuentra asociado al modelo Moneda
+    /// </summary>
+   public class Pais
     {
 
-        [Key, MaxLength(30)]
+        [Key]
         public int Pais_ID { get; set; }
 
         [Required, MaxLength(100)]

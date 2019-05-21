@@ -3,13 +3,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
+    /// <summary>
+    /// Enum, encargado de le gestión de los distintos tipos de Núcleos Urbanos
+    /// </summary>
+   public enum tipoPoblacion {
+        Aldea = 1,
+        Pueblo = 2,
+        Ciudad = 3,
+        Provincia = 4
+    };
 
-    enum tipoPoblacion {Aldea, Pueblo, Ciudad, Provincia}
-
-
-    class Poblacion
+    /// <summary>
+    /// Modelo encargado de gestionar las distintas poblaciones y provincias.
+    /// El atributo Padre define la provincia de una población.
+    /// </summary>
+    public class Poblacion
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int Poblacion_ID { get; set; }
 
         [Required, MaxLength(100)]
@@ -18,10 +28,9 @@ namespace facturacion.Model
         [Required]
         public tipoPoblacion Tipo { get; set; }
 
-        [Required, MaxLength(5)]
+        [Required]
         public string  Cpostal { get; set; }
-
-        [MaxLength(30)]
+                
         public int Padre { get; set; }
     }
 }

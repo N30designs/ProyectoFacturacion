@@ -3,10 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class Proveedor
+    /// <summary>
+    /// Modelo encargado de gestionar los distintos proveedores.
+    /// Actualmente se encuentra incompleto pero funcional.
+    /// </summary>
+    public class Proveedor
     {
 
-        [Key, MaxLength(30)]
+        [Key]
         public int Proveedor_ID { get; set; }
 
         [Required, MaxLength(100)]

@@ -7,13 +7,23 @@ using System.Threading.Tasks;
 
 namespace facturacion.Model
 {
-    enum TipoEmpleado {Vendedor, Reponedor, Soporte}
+    /// <summary>
+    /// Enumerado que contiene los distintos puestos que puede desarrollar el empleado. 
+    /// </summary>
+    public enum TipoEmpleado {
+        Vendedor = 1,
+        Reponedor =2,
+        Soporte =3
+    };
 
-
-    class Empleado
+    /// <summary>
+    /// Modelo que crea los objetos que representan a los empleados. Serán utilizados 
+    /// cada vez que sea necesario hacer referencia a algún empleado. 
+    /// </summary>
+    public class Empleado
     {
 
-        [Key, MaxLength(30)]
+        [Key]
         public int EmpeleadoID { get; set; }
 
         public TipoEmpleado TipoEmpleado { get; set; }
@@ -32,45 +42,46 @@ namespace facturacion.Model
         [Required, MaxLength(9)]
         public string Nif { get; set; }
 
-        [MaxLength(200), EmailAddress]
+        [EmailAddress]
         public string Email { get; set; }
 
-        [Required, MaxLength(9), Phone]
+        [Required, Phone]
         public string Telefono1 { get; set; }
 
-        [MaxLength(9), Phone]
+        [Phone]
         public string Telefono2 { get; set; }
 
         [MaxLength(100)]
         public string Direccion { get; set; }
-        [MaxLength(4)]
+
+        
         public int Numero { get; set; }
 
-        [MaxLength(2)]
+        
         public int Bloque { get; set; }
 
-        [MaxLength(2)]
+        
         public int Escalera { get; set; }
 
-        [MaxLength(2)]
+       
         public int Portal { get; set; }
 
-        [MaxLength(2)]
+       
         public int Planta { get; set; }
 
-        [MaxLength(2)]
+       
         public int Piso { get; set; }
 
-        [MaxLength(10)]
+        
         public string Puerta { get; set; }
 
-       [MaxLength(9), Phone]
+       [Phone]
         public string Fax { get; set; }
 
         [Required]
         public DateTime Creacion { get; set; }
 
-        [Timestamp]
+        
         public DateTime Modificacion { get; set; }
 
         

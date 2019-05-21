@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
 {
-    class Series
+    /// <summary>
+    /// Modelo que gestionará las distintas series de facturación, se relaciona
+    /// con empresa y las series será únicas para cada empresa. 
+    /// </summary>
+    public class Series
     {
-        [Key, MaxLength(30)]
+        [Key]
         public int SerieID { get; set; }
 
-        [Required, MaxLength(30)]
+        [Required]
         public int Valor { get; set; }
 
         [Required, MaxLength(10)]
