@@ -85,7 +85,7 @@
             // 
             this.menuItem8.Index = 1;
             this.menuItem8.Text = "Mostrar Clientes";
-            this.menuItem8.Click += new System.EventHandler(this.MenuItem8_Click);
+            this.menuItem8.Click += new System.EventHandler(this.AccionListarClientes);
             // 
             // menuItem3
             // 
@@ -133,7 +133,6 @@
             // 
             this.menuItem5.Index = 4;
             this.menuItem5.Text = "Preferencias";
-            this.menuItem5.Click += new System.EventHandler(this.MenuItem5_Click);
             // 
             // FormularioPrincipal
             // 
@@ -143,7 +142,6 @@
             this.Menu = this.mainMenu1;
             this.Name = "FormularioPrincipal";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }

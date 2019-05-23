@@ -31,6 +31,6 @@ namespace facturacion.Model
         [Required]
         public string  Cpostal { get; set; }
                 
-        public int Padre { get; set; }
+        public int? Padre { get; set; }
     }
 }

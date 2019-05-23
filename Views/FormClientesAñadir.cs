@@ -2,18 +2,33 @@
 using System.Windows.Forms;
 using facturacion.Model;
 using facturacion.Business;
+using facturacion.Data;
+using System.Collections.Generic;
 
 namespace facturacion.Views
 {
     public partial class FormClientesAñadir : Form
     {
-        
+        Clientes clientes = new Clientes();
+        FacturacionContext context = new FacturacionContext();
+
         public FormClientesAñadir()
         {
-            /*cTipoCliente.DataSource = Clientes.getTipos();
+            ICollection<TipoCliente> tipoClientes = clientes.Tipos();
+            foreach (var i in clientes.Tipos())
+            {
+                cTipoCliente.Items.Add(i);
+            }
+            
             cTipoCliente.ValueMember = "Tipo_Cliente_ID";
-            cTipoCliente.DisplayMember = "Denominacion";*/
-            InitializeComponent();
+            cTipoCliente.DisplayMember = "Denominacion";
+
+
+            /*foreach (var t in clientes.Tipos())
+            {
+                MessageBox.Show(t.Denominacion);
+            }
+            InitializeComponent();*/
         }
 
         /*public void accionAñadirCliente(object sender)
@@ -29,14 +44,11 @@ namespace facturacion.Views
 
         }*/
 
-        private void FlowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void BtAñadirCliente_Click(object sender, EventArgs e)
         {
             Cliente c1 = new Cliente();
+
             c1.Nombre = tNombre.Text;
             c1.Apellidos = $"{tApellido1.Text} {tApellido2.Text}";
             //c1.TipoCliente <- Primero debemos rellenarlo, lo desactivo para probar
@@ -76,8 +88,28 @@ namespace facturacion.Views
                 c1.Bic = tBic.Text;
             if (tIrpf.TextLength > 1)
                 c1.Irpf = int.Parse(tIrpf.Text);
-               
-            Clientes.NuevoCliente(c1);
+
+            
+            clientes.NuevoCliente(c1);              
         }
+
+        public void editarCPostal(object sender, EventArgs e)
+        {
+            var p = new Poblaciones();
+            var poblaciones = p.Find(TPostal.Text);
+
+            cPoblacion.DataSource = poblaciones;
+            cPoblacion.ValueMember = "Nombre";
+            cPoblacion.DisplayMember = "Nombre";
+            cPoblacion.Enabled = true;
+
+            if(poblaciones.Count > 0)
+            {
+                cPoblacion.DropDownStyle = ComboBoxStyle.DropDownList;
+            }
+
+
+        }
+
     }
 }

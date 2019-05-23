@@ -40,12 +40,8 @@ namespace facturacion.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.Entity<Cliente>().Map(m =>
-            {
-                m.Properties<Cliente>(p => new { p.Bloque, p.Portal });
-                
-            });
-            }
+            
+            
         }
     }
 }

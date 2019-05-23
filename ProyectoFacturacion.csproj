@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Business\Clientes.cs" />
     <Compile Include="Business\IClients.cs" />
+    <Compile Include="Business\IPoblaciones.cs" />
+    <Compile Include="Business\Poblaciones.cs" />
     <Compile Include="consola.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
@@ -82,6 +84,14 @@
     <Compile Include="Migrations\201905211042143_bloqueOpcional.cs" />
     <Compile Include="Migrations\201905211042143_bloqueOpcional.Designer.cs">
       <DependentUpon>201905211042143_bloqueOpcional.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905220725198_probandoNull.cs" />
+    <Compile Include="Migrations\201905220725198_probandoNull.Designer.cs">
+      <DependentUpon>201905220725198_probandoNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905220920474_cambioCampoPadrePoblacion.cs" />
+    <Compile Include="Migrations\201905220920474_cambioCampoPadrePoblacion.Designer.cs">
+      <DependentUpon>201905220920474_cambioCampoPadrePoblacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
@@ -114,6 +124,12 @@
     <Compile Include="Views\FormClientesAñadir.Designer.cs">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormClientesListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormClientesListar.Designer.cs">
+      <DependentUpon>FormClientesListar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +141,7 @@
     <None Include="App.config" />
     <None Include="Others\PequeñoProyecto.vpp" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\facturacion.Data.FacturacionContext.datasource" />
     <None Include="Properties\DataSources\facturacion.Model.Albaran.datasource" />
     <None Include="Properties\DataSources\facturacion.Model.Cliente.datasource" />
     <None Include="Properties\DataSources\facturacion.Model.DetalleFactura.datasource" />
@@ -166,8 +183,17 @@
     <EmbeddedResource Include="Migrations\201905211042143_bloqueOpcional.resx">
       <DependentUpon>201905211042143_bloqueOpcional.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905220725198_probandoNull.resx">
+      <DependentUpon>201905220725198_probandoNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905220920474_cambioCampoPadrePoblacion.resx">
+      <DependentUpon>201905220920474_cambioCampoPadrePoblacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesAñadir.resx">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormClientesListar.resx">
+      <DependentUpon>FormClientesListar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>

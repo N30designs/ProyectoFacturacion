@@ -32,19 +32,19 @@ namespace facturacion.Model
         public int Numero { get; set; }
 
         
-        public int Bloque { get; set; }
+        public int? Bloque { get; set; }
 
         
-        public int Portal { get; set; }
+        public int? Portal { get; set; }
 
         
-        public int Escalera { get; set; }
+        public int? Escalera { get; set; }
 
         
-        public int Planta { get; set; }
+        public int? Planta { get; set; }
 
         
-        public int Piso { get; set; }
+        public int? Piso { get; set; }
 
         
         public string Puerta { get; set; }

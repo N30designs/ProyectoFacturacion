@@ -43,10 +43,12 @@
             this.tApellido1 = new System.Windows.Forms.TextBox();
             this.lApellido1 = new System.Windows.Forms.Label();
             this.gDireccion = new System.Windows.Forms.GroupBox();
+            this.cPoblacion = new System.Windows.Forms.ComboBox();
             this.lFax = new System.Windows.Forms.Label();
             this.lTelefono2 = new System.Windows.Forms.Label();
             this.lTelefono1 = new System.Windows.Forms.Label();
             this.lWeb = new System.Windows.Forms.Label();
+            this.lContacto = new System.Windows.Forms.Label();
             this.lProvincia = new System.Windows.Forms.Label();
             this.lPostal = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,9 +60,9 @@
             this.tTelefono2 = new System.Windows.Forms.TextBox();
             this.tTelefono1 = new System.Windows.Forms.TextBox();
             this.tWeb = new System.Windows.Forms.TextBox();
+            this.tContacto = new System.Windows.Forms.TextBox();
             this.tProvincia = new System.Windows.Forms.TextBox();
             this.TPostal = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tPlanta = new System.Windows.Forms.TextBox();
             this.lPlanta = new System.Windows.Forms.Label();
             this.tPortal = new System.Windows.Forms.TextBox();
@@ -104,7 +106,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(983, 536);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowLayoutPanel1_Paint);
             // 
             // gNombre
             // 
@@ -123,17 +124,18 @@
             this.gNombre.Location = new System.Drawing.Point(3, 3);
             this.gNombre.Name = "gNombre";
             this.gNombre.Size = new System.Drawing.Size(980, 104);
-            this.gNombre.TabIndex = 0;
+            this.gNombre.TabIndex = 1;
             this.gNombre.TabStop = false;
             this.gNombre.Text = "Nombre";
             // 
             // cTipoCliente
             // 
+            this.cTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cTipoCliente.FormattingEnabled = true;
             this.cTipoCliente.Location = new System.Drawing.Point(454, 36);
             this.cTipoCliente.Name = "cTipoCliente";
             this.cTipoCliente.Size = new System.Drawing.Size(206, 21);
-            this.cTipoCliente.TabIndex = 2;
+            this.cTipoCliente.TabIndex = 4;
             // 
             // lNombreFiscal
             // 
@@ -150,7 +152,7 @@
             this.lNombre.Location = new System.Drawing.Point(6, 16);
             this.lNombre.Name = "lNombre";
             this.lNombre.Size = new System.Drawing.Size(44, 13);
-            this.lNombre.TabIndex = 0;
+            this.lNombre.TabIndex = 1;
             this.lNombre.Text = "Nombre";
             // 
             // lCif
@@ -184,20 +186,23 @@
             // tApellido2
             // 
             this.tApellido2.Location = new System.Drawing.Point(300, 37);
+            this.tApellido2.MaxLength = 50;
             this.tApellido2.Name = "tApellido2";
             this.tApellido2.Size = new System.Drawing.Size(144, 20);
-            this.tApellido2.TabIndex = 1;
+            this.tApellido2.TabIndex = 3;
             // 
             // tNombreFiscal
             // 
             this.tNombreFiscal.Location = new System.Drawing.Point(9, 84);
+            this.tNombreFiscal.MaxLength = 100;
             this.tNombreFiscal.Name = "tNombreFiscal";
             this.tNombreFiscal.Size = new System.Drawing.Size(651, 20);
-            this.tNombreFiscal.TabIndex = 1;
+            this.tNombreFiscal.TabIndex = 6;
             // 
             // tNombre
             // 
             this.tNombre.Location = new System.Drawing.Point(9, 37);
+            this.tNombre.MaxLength = 50;
             this.tNombre.Name = "tNombre";
             this.tNombre.Size = new System.Drawing.Size(135, 20);
             this.tNombre.TabIndex = 1;
@@ -206,16 +211,18 @@
             // 
             this.tCif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.tCif.Location = new System.Drawing.Point(830, 37);
+            this.tCif.MaxLength = 10;
             this.tCif.Name = "tCif";
             this.tCif.Size = new System.Drawing.Size(138, 20);
-            this.tCif.TabIndex = 1;
+            this.tCif.TabIndex = 5;
             // 
             // tApellido1
             // 
             this.tApellido1.Location = new System.Drawing.Point(150, 37);
+            this.tApellido1.MaxLength = 50;
             this.tApellido1.Name = "tApellido1";
             this.tApellido1.Size = new System.Drawing.Size(144, 20);
-            this.tApellido1.TabIndex = 1;
+            this.tApellido1.TabIndex = 2;
             // 
             // lApellido1
             // 
@@ -228,10 +235,12 @@
             // 
             // gDireccion
             // 
+            this.gDireccion.Controls.Add(this.cPoblacion);
             this.gDireccion.Controls.Add(this.lFax);
             this.gDireccion.Controls.Add(this.lTelefono2);
             this.gDireccion.Controls.Add(this.lTelefono1);
             this.gDireccion.Controls.Add(this.lWeb);
+            this.gDireccion.Controls.Add(this.lContacto);
             this.gDireccion.Controls.Add(this.lProvincia);
             this.gDireccion.Controls.Add(this.lPostal);
             this.gDireccion.Controls.Add(this.label2);
@@ -243,9 +252,9 @@
             this.gDireccion.Controls.Add(this.tTelefono2);
             this.gDireccion.Controls.Add(this.tTelefono1);
             this.gDireccion.Controls.Add(this.tWeb);
+            this.gDireccion.Controls.Add(this.tContacto);
             this.gDireccion.Controls.Add(this.tProvincia);
             this.gDireccion.Controls.Add(this.TPostal);
-            this.gDireccion.Controls.Add(this.textBox2);
             this.gDireccion.Controls.Add(this.tPlanta);
             this.gDireccion.Controls.Add(this.lPlanta);
             this.gDireccion.Controls.Add(this.tPortal);
@@ -263,10 +272,19 @@
             this.gDireccion.TabStop = false;
             this.gDireccion.Text = "Domicilio";
             // 
+            // cPoblacion
+            // 
+            this.cPoblacion.Enabled = false;
+            this.cPoblacion.FormattingEnabled = true;
+            this.cPoblacion.Location = new System.Drawing.Point(9, 88);
+            this.cPoblacion.Name = "cPoblacion";
+            this.cPoblacion.Size = new System.Drawing.Size(285, 21);
+            this.cPoblacion.TabIndex = 15;
+            // 
             // lFax
             // 
             this.lFax.AutoSize = true;
-            this.lFax.Location = new System.Drawing.Point(827, 115);
+            this.lFax.Location = new System.Drawing.Point(827, 120);
             this.lFax.Name = "lFax";
             this.lFax.Size = new System.Drawing.Size(24, 13);
             this.lFax.TabIndex = 0;
@@ -298,6 +316,15 @@
             this.lWeb.Size = new System.Drawing.Size(56, 13);
             this.lWeb.TabIndex = 0;
             this.lWeb.Text = "Sitio Web:";
+            // 
+            // lContacto
+            // 
+            this.lContacto.AutoSize = true;
+            this.lContacto.Location = new System.Drawing.Point(451, 115);
+            this.lContacto.Name = "lContacto";
+            this.lContacto.Size = new System.Drawing.Size(50, 13);
+            this.lContacto.TabIndex = 0;
+            this.lContacto.Text = "Contacto";
             // 
             // lProvincia
             // 
@@ -338,16 +365,18 @@
             // tDireccion
             // 
             this.tDireccion.Location = new System.Drawing.Point(9, 37);
+            this.tDireccion.MaxLength = 100;
             this.tDireccion.Name = "tDireccion";
             this.tDireccion.Size = new System.Drawing.Size(435, 20);
-            this.tDireccion.TabIndex = 1;
+            this.tDireccion.TabIndex = 0;
             // 
             // tPuerta
             // 
             this.tPuerta.Location = new System.Drawing.Point(719, 37);
+            this.tPuerta.MaxLength = 10;
             this.tPuerta.Name = "tPuerta";
             this.tPuerta.Size = new System.Drawing.Size(47, 20);
-            this.tPuerta.TabIndex = 1;
+            this.tPuerta.TabIndex = 6;
             // 
             // lPuerta
             // 
@@ -360,59 +389,65 @@
             // 
             // tFax
             // 
-            this.tFax.Location = new System.Drawing.Point(830, 131);
+            this.tFax.Location = new System.Drawing.Point(830, 136);
+            this.tFax.MaxLength = 20;
             this.tFax.Name = "tFax";
             this.tFax.Size = new System.Drawing.Size(138, 20);
-            this.tFax.TabIndex = 1;
+            this.tFax.TabIndex = 14;
             // 
             // tTelefono2
             // 
             this.tTelefono2.Location = new System.Drawing.Point(830, 88);
+            this.tTelefono2.MaxLength = 20;
             this.tTelefono2.Name = "tTelefono2";
             this.tTelefono2.Size = new System.Drawing.Size(138, 20);
-            this.tTelefono2.TabIndex = 1;
+            this.tTelefono2.TabIndex = 11;
             // 
             // tTelefono1
             // 
             this.tTelefono1.Location = new System.Drawing.Point(830, 37);
+            this.tTelefono1.MaxLength = 20;
             this.tTelefono1.Name = "tTelefono1";
             this.tTelefono1.Size = new System.Drawing.Size(138, 20);
-            this.tTelefono1.TabIndex = 1;
+            this.tTelefono1.TabIndex = 7;
             // 
             // tWeb
             // 
             this.tWeb.Location = new System.Drawing.Point(9, 136);
             this.tWeb.Name = "tWeb";
-            this.tWeb.Size = new System.Drawing.Size(757, 20);
-            this.tWeb.TabIndex = 1;
+            this.tWeb.Size = new System.Drawing.Size(435, 20);
+            this.tWeb.TabIndex = 12;
+            // 
+            // tContacto
+            // 
+            this.tContacto.Location = new System.Drawing.Point(454, 136);
+            this.tContacto.Name = "tContacto";
+            this.tContacto.Size = new System.Drawing.Size(312, 20);
+            this.tContacto.TabIndex = 13;
             // 
             // tProvincia
             // 
+            this.tProvincia.Enabled = false;
             this.tProvincia.Location = new System.Drawing.Point(454, 88);
             this.tProvincia.Name = "tProvincia";
             this.tProvincia.Size = new System.Drawing.Size(312, 20);
-            this.tProvincia.TabIndex = 1;
+            this.tProvincia.TabIndex = 10;
             // 
             // TPostal
             // 
             this.TPostal.Location = new System.Drawing.Point(309, 88);
             this.TPostal.Name = "TPostal";
             this.TPostal.Size = new System.Drawing.Size(135, 20);
-            this.TPostal.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(9, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(285, 20);
-            this.textBox2.TabIndex = 1;
+            this.TPostal.TabIndex = 9;
+            this.TPostal.Leave += new System.EventHandler(this.editarCPostal);
             // 
             // tPlanta
             // 
             this.tPlanta.Location = new System.Drawing.Point(666, 37);
+            this.tPlanta.MaxLength = 2;
             this.tPlanta.Name = "tPlanta";
             this.tPlanta.Size = new System.Drawing.Size(47, 20);
-            this.tPlanta.TabIndex = 1;
+            this.tPlanta.TabIndex = 5;
             // 
             // lPlanta
             // 
@@ -426,9 +461,10 @@
             // tPortal
             // 
             this.tPortal.Location = new System.Drawing.Point(613, 37);
+            this.tPortal.MaxLength = 2;
             this.tPortal.Name = "tPortal";
             this.tPortal.Size = new System.Drawing.Size(47, 20);
-            this.tPortal.TabIndex = 1;
+            this.tPortal.TabIndex = 4;
             // 
             // lPortal
             // 
@@ -442,9 +478,10 @@
             // tEscalera
             // 
             this.tEscalera.Location = new System.Drawing.Point(560, 37);
+            this.tEscalera.MaxLength = 2;
             this.tEscalera.Name = "tEscalera";
             this.tEscalera.Size = new System.Drawing.Size(47, 20);
-            this.tEscalera.TabIndex = 1;
+            this.tEscalera.TabIndex = 3;
             // 
             // lEscalera
             // 
@@ -458,9 +495,10 @@
             // tBloque
             // 
             this.tBloque.Location = new System.Drawing.Point(507, 37);
+            this.tBloque.MaxLength = 2;
             this.tBloque.Name = "tBloque";
             this.tBloque.Size = new System.Drawing.Size(47, 20);
-            this.tBloque.TabIndex = 1;
+            this.tBloque.TabIndex = 2;
             // 
             // lBloque
             // 
@@ -474,6 +512,7 @@
             // tNumero
             // 
             this.tNumero.Location = new System.Drawing.Point(454, 37);
+            this.tNumero.MaxLength = 4;
             this.tNumero.Name = "tNumero";
             this.tNumero.Size = new System.Drawing.Size(47, 20);
             this.tNumero.TabIndex = 1;
@@ -565,35 +604,40 @@
             // tIrpf
             // 
             this.tIrpf.Location = new System.Drawing.Point(607, 34);
+            this.tIrpf.MaxLength = 2;
             this.tIrpf.Name = "tIrpf";
             this.tIrpf.Size = new System.Drawing.Size(135, 20);
-            this.tIrpf.TabIndex = 1;
+            this.tIrpf.TabIndex = 4;
             // 
             // tBic
             // 
             this.tBic.Location = new System.Drawing.Point(454, 34);
+            this.tBic.MaxLength = 11;
             this.tBic.Name = "tBic";
             this.tBic.Size = new System.Drawing.Size(135, 20);
-            this.tBic.TabIndex = 1;
+            this.tBic.TabIndex = 3;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(9, 83);
+            this.textBox4.MaxLength = 1000;
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(959, 103);
-            this.textBox4.TabIndex = 1;
+            this.textBox4.TabIndex = 5;
             // 
             // tIban
             // 
             this.tIban.Location = new System.Drawing.Point(159, 34);
+            this.tIban.MaxLength = 24;
             this.tIban.Name = "tIban";
             this.tIban.Size = new System.Drawing.Size(276, 20);
-            this.tIban.TabIndex = 1;
+            this.tIban.TabIndex = 2;
             // 
             // tDiasPago
             // 
             this.tDiasPago.Location = new System.Drawing.Point(89, 34);
+            this.tDiasPago.MaxLength = 3;
             this.tDiasPago.Name = "tDiasPago";
             this.tDiasPago.Size = new System.Drawing.Size(55, 20);
             this.tDiasPago.TabIndex = 1;
@@ -601,16 +645,18 @@
             // tDescuento
             // 
             this.tDescuento.Location = new System.Drawing.Point(9, 34);
+            this.tDescuento.MaxLength = 2;
             this.tDescuento.Name = "tDescuento";
             this.tDescuento.Size = new System.Drawing.Size(67, 20);
-            this.tDescuento.TabIndex = 1;
+            this.tDescuento.TabIndex = 0;
+            this.tDescuento.Text = "0";
             // 
             // btAñadirCliente
             // 
             this.btAñadirCliente.Location = new System.Drawing.Point(3, 491);
             this.btAñadirCliente.Name = "btAñadirCliente";
             this.btAñadirCliente.Size = new System.Drawing.Size(84, 23);
-            this.btAñadirCliente.TabIndex = 3;
+            this.btAñadirCliente.TabIndex = 2;
             this.btAñadirCliente.Text = "Añadir Cliente";
             this.btAñadirCliente.UseVisualStyleBackColor = true;
             this.btAñadirCliente.Click += new System.EventHandler(this.BtAñadirCliente_Click);
@@ -620,7 +666,7 @@
             this.btCancelar.Location = new System.Drawing.Point(93, 491);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 4;
+            this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
@@ -677,7 +723,6 @@
         private System.Windows.Forms.TextBox tTelefono1;
         private System.Windows.Forms.TextBox tProvincia;
         private System.Windows.Forms.TextBox TPostal;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lFax;
         private System.Windows.Forms.Label lTelefono2;
         private System.Windows.Forms.TextBox tFax;
@@ -704,5 +749,8 @@
         private System.Data.Entity.Core.EntityClient.EntityConnection entityConnection1;
         private System.Windows.Forms.Button btAñadirCliente;
         private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.Label lContacto;
+        private System.Windows.Forms.TextBox tContacto;
+        private System.Windows.Forms.ComboBox cPoblacion;
     }
 }

@@ -26,21 +26,7 @@ namespace facturacion.Views
 
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItem5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MenuItem8_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void AccionSalir(object sender, EventArgs e)
         {
@@ -50,6 +36,16 @@ namespace facturacion.Views
         private void AccionAñadirClientes(object sender, EventArgs e)
         {
             FormClientesAñadir form = new FormClientesAñadir()
+            {
+                MdiParent = this
+            };
+
+            form.Show();
+        }
+
+        private void AccionListarClientes(object sender, EventArgs e)
+        {
+            FormClientesListar form = new FormClientesListar()
             {
                 MdiParent = this
             };
