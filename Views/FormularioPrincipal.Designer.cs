@@ -141,7 +141,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 708);
             this.Menu = this.mainMenu1;
             this.Name = "FormularioPrincipal";
-            this.Text = "Form1";
+            this.Text = "Nombre de la aplicación";
             this.ResumeLayout(false);
 
         }

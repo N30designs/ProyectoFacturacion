@@ -56,8 +56,6 @@ namespace facturacion.Business
             {
                 try
                 {
-                    //var client = context.Clientes.Create();
-                    //client <- cliente
                     cliente.Creacion = DateTime.Now;
                     cliente.Modificacion = DateTime.Now;
                     context.Clientes.Add(cliente);

@@ -61,7 +61,6 @@
             this.tTelefono1 = new System.Windows.Forms.TextBox();
             this.tWeb = new System.Windows.Forms.TextBox();
             this.tContacto = new System.Windows.Forms.TextBox();
-            this.tProvincia = new System.Windows.Forms.TextBox();
             this.TPostal = new System.Windows.Forms.TextBox();
             this.tPlanta = new System.Windows.Forms.TextBox();
             this.lPlanta = new System.Windows.Forms.Label();
@@ -89,6 +88,9 @@
             this.btAñadirCliente = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.entityConnection1 = new System.Data.Entity.Core.EntityClient.EntityConnection();
+            this.lTipoPoblacion = new System.Windows.Forms.Label();
+            this.cTipoPoblacion = new System.Windows.Forms.ComboBox();
+            this.cProvincia = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.gNombre.SuspendLayout();
             this.gDireccion.SuspendLayout();
@@ -235,6 +237,8 @@
             // 
             // gDireccion
             // 
+            this.gDireccion.Controls.Add(this.cProvincia);
+            this.gDireccion.Controls.Add(this.cTipoPoblacion);
             this.gDireccion.Controls.Add(this.cPoblacion);
             this.gDireccion.Controls.Add(this.lFax);
             this.gDireccion.Controls.Add(this.lTelefono2);
@@ -242,6 +246,7 @@
             this.gDireccion.Controls.Add(this.lWeb);
             this.gDireccion.Controls.Add(this.lContacto);
             this.gDireccion.Controls.Add(this.lProvincia);
+            this.gDireccion.Controls.Add(this.lTipoPoblacion);
             this.gDireccion.Controls.Add(this.lPostal);
             this.gDireccion.Controls.Add(this.label2);
             this.gDireccion.Controls.Add(this.lDireccion);
@@ -253,7 +258,6 @@
             this.gDireccion.Controls.Add(this.tTelefono1);
             this.gDireccion.Controls.Add(this.tWeb);
             this.gDireccion.Controls.Add(this.tContacto);
-            this.gDireccion.Controls.Add(this.tProvincia);
             this.gDireccion.Controls.Add(this.TPostal);
             this.gDireccion.Controls.Add(this.tPlanta);
             this.gDireccion.Controls.Add(this.lPlanta);
@@ -278,8 +282,9 @@
             this.cPoblacion.FormattingEnabled = true;
             this.cPoblacion.Location = new System.Drawing.Point(9, 88);
             this.cPoblacion.Name = "cPoblacion";
-            this.cPoblacion.Size = new System.Drawing.Size(285, 21);
+            this.cPoblacion.Size = new System.Drawing.Size(253, 21);
             this.cPoblacion.TabIndex = 15;
+            this.cPoblacion.ValueMemberChanged += new System.EventHandler(this.seleccionaTipoyProvincia);
             // 
             // lFax
             // 
@@ -293,7 +298,7 @@
             // lTelefono2
             // 
             this.lTelefono2.AutoSize = true;
-            this.lTelefono2.Location = new System.Drawing.Point(827, 72);
+            this.lTelefono2.Location = new System.Drawing.Point(827, 68);
             this.lTelefono2.Name = "lTelefono2";
             this.lTelefono2.Size = new System.Drawing.Size(55, 13);
             this.lTelefono2.TabIndex = 0;
@@ -329,7 +334,7 @@
             // lProvincia
             // 
             this.lProvincia.AutoSize = true;
-            this.lProvincia.Location = new System.Drawing.Point(451, 67);
+            this.lProvincia.Location = new System.Drawing.Point(536, 67);
             this.lProvincia.Name = "lProvincia";
             this.lProvincia.Size = new System.Drawing.Size(51, 13);
             this.lProvincia.TabIndex = 0;
@@ -338,7 +343,7 @@
             // lPostal
             // 
             this.lPostal.AutoSize = true;
-            this.lPostal.Location = new System.Drawing.Point(306, 67);
+            this.lPostal.Location = new System.Drawing.Point(392, 67);
             this.lPostal.Name = "lPostal";
             this.lPostal.Size = new System.Drawing.Size(72, 13);
             this.lPostal.TabIndex = 0;
@@ -425,17 +430,9 @@
             this.tContacto.Size = new System.Drawing.Size(312, 20);
             this.tContacto.TabIndex = 13;
             // 
-            // tProvincia
-            // 
-            this.tProvincia.Enabled = false;
-            this.tProvincia.Location = new System.Drawing.Point(454, 88);
-            this.tProvincia.Name = "tProvincia";
-            this.tProvincia.Size = new System.Drawing.Size(312, 20);
-            this.tProvincia.TabIndex = 10;
-            // 
             // TPostal
             // 
-            this.TPostal.Location = new System.Drawing.Point(309, 88);
+            this.TPostal.Location = new System.Drawing.Point(395, 88);
             this.TPostal.Name = "TPostal";
             this.TPostal.Size = new System.Drawing.Size(135, 20);
             this.TPostal.TabIndex = 9;
@@ -659,7 +656,7 @@
             this.btAñadirCliente.TabIndex = 2;
             this.btAñadirCliente.Text = "Añadir Cliente";
             this.btAñadirCliente.UseVisualStyleBackColor = true;
-            this.btAñadirCliente.Click += new System.EventHandler(this.BtAñadirCliente_Click);
+            this.btAñadirCliente.Click += new System.EventHandler(this.accionAñadirCliente);
             // 
             // btCancelar
             // 
@@ -670,6 +667,35 @@
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
             // 
+            // lTipoPoblacion
+            // 
+            this.lTipoPoblacion.AutoSize = true;
+            this.lTipoPoblacion.Location = new System.Drawing.Point(265, 68);
+            this.lTipoPoblacion.Name = "lTipoPoblacion";
+            this.lTipoPoblacion.Size = new System.Drawing.Size(31, 13);
+            this.lTipoPoblacion.TabIndex = 0;
+            this.lTipoPoblacion.Text = "Tipo:";
+            // 
+            // cTipoPoblacion
+            // 
+            this.cTipoPoblacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cTipoPoblacion.Enabled = false;
+            this.cTipoPoblacion.FormattingEnabled = true;
+            this.cTipoPoblacion.Location = new System.Drawing.Point(268, 88);
+            this.cTipoPoblacion.Name = "cTipoPoblacion";
+            this.cTipoPoblacion.Size = new System.Drawing.Size(121, 21);
+            this.cTipoPoblacion.TabIndex = 16;
+            // 
+            // cProvincia
+            // 
+            this.cProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cProvincia.Enabled = false;
+            this.cProvincia.FormattingEnabled = true;
+            this.cProvincia.Location = new System.Drawing.Point(539, 88);
+            this.cProvincia.Name = "cProvincia";
+            this.cProvincia.Size = new System.Drawing.Size(227, 21);
+            this.cProvincia.TabIndex = 17;
+            // 
             // FormClientesAñadir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -678,6 +704,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FormClientesAñadir";
             this.Text = "AñadirCliente";
+            this.Load += new System.EventHandler(this.inicializar);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.gNombre.ResumeLayout(false);
             this.gNombre.PerformLayout();
@@ -721,7 +748,6 @@
         private System.Windows.Forms.Label lPostal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tTelefono1;
-        private System.Windows.Forms.TextBox tProvincia;
         private System.Windows.Forms.TextBox TPostal;
         private System.Windows.Forms.Label lFax;
         private System.Windows.Forms.Label lTelefono2;
@@ -752,5 +778,8 @@
         private System.Windows.Forms.Label lContacto;
         private System.Windows.Forms.TextBox tContacto;
         private System.Windows.Forms.ComboBox cPoblacion;
+        private System.Windows.Forms.ComboBox cProvincia;
+        private System.Windows.Forms.ComboBox cTipoPoblacion;
+        private System.Windows.Forms.Label lTipoPoblacion;
     }
 }

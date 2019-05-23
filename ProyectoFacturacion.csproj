@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CED9F099-5C38-4D10-81CA-773A587CF19A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>facturacion</RootNamespace>
     <AssemblyName>facturacion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -69,7 +69,6 @@
     <Compile Include="Business\IClients.cs" />
     <Compile Include="Business\IPoblaciones.cs" />
     <Compile Include="Business\Poblaciones.cs" />
-    <Compile Include="consola.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
     <Compile Include="Factory.cs" />

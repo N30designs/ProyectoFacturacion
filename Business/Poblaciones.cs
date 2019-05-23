@@ -33,6 +33,8 @@ namespace facturacion.Business
                     if (parent.HasValue)
                         p.Padre = parent;
 
+                    context.Poblaciones.Add(p);
+                    context.SaveChanges();
                 }
                 catch (DbEntityValidationException ex)
                 {
@@ -69,7 +71,7 @@ namespace facturacion.Business
         /// </summary>
         /// <param name="search">Cadena que filtrará los volores de búsqueda.</param>
         /// <returns></returns>
-        public ICollection<Poblacion> Find(string search)
+        public ICollection<Poblacion> Buscar(string search)
         {
             using (FacturacionContext context = new FacturacionContext())
             {
@@ -80,6 +82,86 @@ namespace facturacion.Business
                 return resultado;
             }
         }
+
+
+        /// <summary>
+        /// Devolverá una única población, la búsqueda se realizará mediante el id de la misma.
+        /// </summary>
+        /// <param name="id">Valor int que corresponde a una única población.</param>
+        /// <returns></returns>
+        public Poblacion BuscarID(int id)
+        {
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                Poblacion resultado = context.Poblaciones.
+                                                Where(p => (p.Poblacion_ID == id)).
+                                                FirstOrDefault();
+                return resultado;
+            }
+        }
+
+
+        /// <summary>
+        /// Devuelve una única población, correspondiente a la provincia de la población.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Número(int) que corresponde a la provincia (padre), de la población introducida.</returns>
+        public int ProvinciaOfPoblacion(int id)
+        {
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                int resultado;
+                int? padre = context.Poblaciones.
+                                                Where(p => (p.Poblacion_ID == id)).
+                                                FirstOrDefault().Padre;
+                if (padre == null)
+                {
+                    resultado = -1;
+                    return resultado;
+                }
+                else
+                {
+                    resultado = (int)padre;
+                    return resultado;
+                }
+                
+            }
+        }
+
+
+        /// <summary>
+        /// Devolverá una colección de Provincias.
+        /// </summary>
+        /// <returns>ICollection que contiene todas los objetos Población que su tipo sea Provincia.</returns>
+        public ICollection<Poblacion> Provincias()
+        {
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                ICollection<Poblacion> resultado = context.Poblaciones.
+                                                Where(p => p.Tipo == tipoPoblacion.Provincia)
+                                                .ToList();
+                return resultado;
+            }
+        }
+
+        /// <summary>
+        /// Devuelve el tipo de una población.
+        /// </summary>
+        /// <param name="id">Id correspondiente a la población de la que deseamos obtener el valor.</param>
+        /// <returns></returns>
+        public tipoPoblacion TipoPoblacion(int id)
+        {
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                tipoPoblacion resultado = context.Poblaciones.
+                                    Where(p => (p.Poblacion_ID == id)).
+                                    FirstOrDefault().Tipo;
+
+                return resultado;
+            }
+        }
+
         
+
     }
 }
