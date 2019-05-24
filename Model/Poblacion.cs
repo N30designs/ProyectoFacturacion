@@ -28,7 +28,7 @@ namespace facturacion.Model
         [Required]
         public tipoPoblacion Tipo { get; set; }
 
-        [Required]
+        [MaxLength(10)]
         public string  Cpostal { get; set; }
                 
         public int? Padre { get; set; }

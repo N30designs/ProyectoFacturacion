@@ -43,6 +43,7 @@
             this.menuItem4 = new System.Windows.Forms.MenuItem();
             this.menuItem13 = new System.Windows.Forms.MenuItem();
             this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -132,13 +133,22 @@
             // menuItem5
             // 
             this.menuItem5.Index = 4;
+            this.menuItem5.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItem6});
             this.menuItem5.Text = "Preferencias";
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 0;
+            this.menuItem6.Text = "Preferencias";
+            this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
             // 
             // FormularioPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 708);
+            this.ClientSize = new System.Drawing.Size(1344, 871);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Menu = this.mainMenu1;
             this.Name = "FormularioPrincipal";
             this.Text = "Nombre de la aplicación";
@@ -162,5 +172,6 @@
         private System.Windows.Forms.MenuItem menuItem11;
         private System.Windows.Forms.MenuItem menuItem12;
         private System.Windows.Forms.MenuItem menuItem13;
+        private System.Windows.Forms.MenuItem menuItem6;
     }
 }

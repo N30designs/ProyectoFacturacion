@@ -44,9 +44,6 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Simplify.Resources">
-      <HintPath>packages\Simplify.Resources.1.0.0\lib\net40\Simplify.Resources.dll</HintPath>
-    </Reference>
     <Reference Include="Simplify.Windows.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=76e7d56d397d79b9, processorArchitecture=MSIL">
       <HintPath>packages\Simplify.Windows.Forms.1.0.0\lib\net40\Simplify.Windows.Forms.dll</HintPath>
     </Reference>
@@ -69,6 +66,9 @@
     <Compile Include="Business\IClients.cs" />
     <Compile Include="Business\IPoblaciones.cs" />
     <Compile Include="Business\Poblaciones.cs" />
+    <Compile Include="Classes\ConexionDB.cs" />
+    <Compile Include="Classes\Encrypt.cs" />
+    <Compile Include="Classes\VariablesGlobales.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
     <Compile Include="Factory.cs" />
@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201905220920474_cambioCampoPadrePoblacion.cs" />
     <Compile Include="Migrations\201905220920474_cambioCampoPadrePoblacion.Designer.cs">
       <DependentUpon>201905220920474_cambioCampoPadrePoblacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905241408344_postalNoObligatorio.cs" />
+    <Compile Include="Migrations\201905241408344_postalNoObligatorio.Designer.cs">
+      <DependentUpon>201905241408344_postalNoObligatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
@@ -134,6 +138,12 @@
     </Compile>
     <Compile Include="Views\FormularioPrincipal.Designer.cs">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormularioPreferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormularioPreferencias.Designer.cs">
+      <DependentUpon>FormularioPreferencias.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +198,9 @@
     <EmbeddedResource Include="Migrations\201905220920474_cambioCampoPadrePoblacion.resx">
       <DependentUpon>201905220920474_cambioCampoPadrePoblacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905241408344_postalNoObligatorio.resx">
+      <DependentUpon>201905241408344_postalNoObligatorio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesAñadir.resx">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormularioPreferencias.resx">
+      <DependentUpon>FormularioPreferencias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

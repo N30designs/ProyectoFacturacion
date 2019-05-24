@@ -23,6 +23,7 @@ namespace facturacion.Views
             resX = Screen.PrimaryScreen.WorkingArea.Width;
             resY = Screen.PrimaryScreen.WorkingArea.Height;
             IsMdiContainer = true;
+            
 
             InitializeComponent();
         }
@@ -46,6 +47,16 @@ namespace facturacion.Views
         private void AccionListarClientes(object sender, EventArgs e)
         {
             FormClientesListar form = new FormClientesListar()
+            {
+                MdiParent = this
+            };
+
+            form.Show();
+        }
+
+        private void menuItem6_Click(object sender, EventArgs e)
+        {
+            FormularioPreferencias form = new FormularioPreferencias()
             {
                 MdiParent = this
             };

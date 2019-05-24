@@ -87,7 +87,7 @@ namespace facturacion.Views
             }
             else
             {
-                //poblaciones.AddPoblacion(cPoblacion.Text, tipoPoblacion.Ciudad, TPostal.Text, int.Parse(cProvincia.SelectedValue));
+                poblaciones.AddPoblacion(cPoblacion.Text, tipoPoblacion.Ciudad, TPostal.Text, int.Parse(cProvincia.SelectedValue.ToString()));
                 TPostal.Clear();
                 cTipoPoblacion.SelectedIndex = -1;
                 cTipoPoblacion.Enabled = false;
@@ -120,10 +120,16 @@ namespace facturacion.Views
            
             
 
-            if(poblacion.Count > 0)
+            if(poblacion.Count > 1)
             {
                 cPoblacion.DropDownStyle = ComboBoxStyle.DropDownList;
                                 
+            }
+            else if(poblacion.Count == 1)
+            {
+                cTipoPoblacion.Enabled = true;
+                cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+                cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
             }
             else
             {
@@ -150,9 +156,9 @@ namespace facturacion.Views
         /// <param name="e"></param>
         public void seleccionaTipoyProvincia(object sender, EventArgs e)
         {
-            cTipoPoblacion.Enabled = true;
-            cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
-            cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+            //cTipoPoblacion.Enabled = true;
+            //cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+            //cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
         }
 
         /// <summary>

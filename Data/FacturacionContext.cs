@@ -1,6 +1,7 @@
 ﻿using facturacion.Model;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using facturacion.Classes;
 using System.Linq;
 
 namespace facturacion.Data
@@ -31,9 +32,10 @@ namespace facturacion.Data
         public virtual DbSet<Transportista> Transportistas{ get; set; }
         public virtual DbSet<Ubicaciones> Ubicaciones { get; set; }
 
-        public FacturacionContext() : base("Facturacion")
+        public FacturacionContext() : base(ConexionDB.Conexion())
         {
-            //Database.SetInitializer(new FacturacionContext());
+            Database.SetInitializer(new FacturacionInitializer());
+            
 
         }
 
