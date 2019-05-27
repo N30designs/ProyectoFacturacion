@@ -1,4 +1,5 @@
-﻿using System;
+﻿using facturacion.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,8 @@ namespace facturacion.Views
         public FormClientesListar()
         {
             InitializeComponent();
+            Clientes clientes = new Clientes();
+            MessageBox.Show(clientes.ListarClientes().Count().ToString());
         }
 
         private void ClienteBindingSource_CurrentChanged(object sender, EventArgs e)

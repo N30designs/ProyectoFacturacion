@@ -3,6 +3,8 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using facturacion.Classes;
 using System.Linq;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Infrastructure.Pluralization;
 
 namespace facturacion.Data
 {
@@ -35,16 +37,7 @@ namespace facturacion.Data
         public virtual DbSet<Transportista> Transportistas{ get; set; }
         public virtual DbSet<Ubicaciones> Ubicaciones { get; set; }
 
-        /// <summary>
-        /// Constructor de la clase, hereda desde un ConnectionString, o bien se le proporciona
-        /// uno manualmente. Ej ("MiDB")
-        /// </summary>
-        public FacturacionContext() : base(ConexionDB.Conexion())
-        {
-            Database.SetInitializer(new FacturacionInitializer());        
-           
-        }
-
+       
         /// <summary>
         /// Modifica parámetros al crear la base de datos.
         /// </summary>
@@ -55,13 +48,21 @@ namespace facturacion.Data
                         
         }
 
+        /// <summary>
+        /// Clase interna que modificará diversos parámetros de la base de datos.
+        /// </summary>
         public class configuracion : DbConfiguration
         {
+            /// <summary>
+            /// Constructor de la clase interna.
+            /// </summary>
             public configuracion()
             {
                 SetDatabaseLogFormatter(
                     (context, writeAction) => new OneLineLog(context, writeAction));
-                                
+
+                SetDefaultConnectionFactory(new LocalDbConnectionFactory("mssqllocaldb"));
+                SetDatabaseInitializer(new FacturacionInitializer());
             }
         }
     }

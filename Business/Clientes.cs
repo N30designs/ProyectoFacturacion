@@ -10,6 +10,7 @@ namespace facturacion.Business
 {
     public class Clientes : IClients
     {
+
         public Clientes()
         {
 
@@ -20,9 +21,19 @@ namespace facturacion.Business
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Devuelve una colección de clientes con todos los clientes que existen en la base de datos.
+        /// </summary>
+        /// <returns>ICollection con todos los objetos Cliente de la base de datos.</returns>
         public ICollection<Cliente> ListarClientes()
         {
-            throw new NotImplementedException();
+            using (FacturacionContext context = new FacturacionContext())
+            {
+                var logger = new Logger();
+                context.Database.Log = l => logger.Log("Listar Clientes", 0, l.ToString());
+                var clientes = context.Clientes.ToList();
+                return clientes;
+            }
         }
 
         /*public static ICollection getTipos()
