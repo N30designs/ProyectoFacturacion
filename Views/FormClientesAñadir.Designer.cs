@@ -84,7 +84,7 @@
             this.lDescuento = new System.Windows.Forms.Label();
             this.tIrpf = new System.Windows.Forms.TextBox();
             this.tBic = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tObservaciones = new System.Windows.Forms.TextBox();
             this.tIban = new System.Windows.Forms.TextBox();
             this.tDiasPago = new System.Windows.Forms.TextBox();
             this.tDescuento = new System.Windows.Forms.TextBox();
@@ -104,10 +104,9 @@
             this.flowLayoutPanel1.Controls.Add(this.gOtros);
             this.flowLayoutPanel1.Controls.Add(this.btAñadirCliente);
             this.flowLayoutPanel1.Controls.Add(this.btCancelar);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(17, 16);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 13);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1311, 660);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(983, 536);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // gNombre
@@ -124,11 +123,9 @@
             this.gNombre.Controls.Add(this.tCif);
             this.gNombre.Controls.Add(this.tApellido1);
             this.gNombre.Controls.Add(this.lApellido1);
-            this.gNombre.Location = new System.Drawing.Point(4, 4);
-            this.gNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gNombre.Location = new System.Drawing.Point(3, 3);
             this.gNombre.Name = "gNombre";
-            this.gNombre.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gNombre.Size = new System.Drawing.Size(1307, 128);
+            this.gNombre.Size = new System.Drawing.Size(980, 104);
             this.gNombre.TabIndex = 1;
             this.gNombre.TabStop = false;
             this.gNombre.Text = "Nombre";
@@ -137,29 +134,26 @@
             // 
             this.cTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cTipoCliente.FormattingEnabled = true;
-            this.cTipoCliente.Location = new System.Drawing.Point(605, 44);
-            this.cTipoCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cTipoCliente.Location = new System.Drawing.Point(454, 36);
             this.cTipoCliente.Name = "cTipoCliente";
-            this.cTipoCliente.Size = new System.Drawing.Size(273, 24);
+            this.cTipoCliente.Size = new System.Drawing.Size(206, 21);
             this.cTipoCliente.TabIndex = 4;
             // 
             // lNombreFiscal
             // 
             this.lNombreFiscal.AutoSize = true;
-            this.lNombreFiscal.Location = new System.Drawing.Point(8, 78);
-            this.lNombreFiscal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombreFiscal.Location = new System.Drawing.Point(6, 63);
             this.lNombreFiscal.Name = "lNombreFiscal";
-            this.lNombreFiscal.Size = new System.Drawing.Size(98, 17);
+            this.lNombreFiscal.Size = new System.Drawing.Size(74, 13);
             this.lNombreFiscal.TabIndex = 0;
             this.lNombreFiscal.Text = "Nombre Fiscal";
             // 
             // lNombre
             // 
             this.lNombre.AutoSize = true;
-            this.lNombre.Location = new System.Drawing.Point(8, 20);
-            this.lNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNombre.Location = new System.Drawing.Point(6, 16);
             this.lNombre.Name = "lNombre";
-            this.lNombre.Size = new System.Drawing.Size(58, 17);
+            this.lNombre.Size = new System.Drawing.Size(44, 13);
             this.lNombre.TabIndex = 1;
             this.lNombre.Text = "Nombre";
             // 
@@ -167,86 +161,77 @@
             // 
             this.lCif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lCif.AutoSize = true;
-            this.lCif.Location = new System.Drawing.Point(1103, 26);
-            this.lCif.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lCif.Location = new System.Drawing.Point(827, 21);
             this.lCif.Name = "lCif";
-            this.lCif.Size = new System.Drawing.Size(53, 17);
+            this.lCif.Size = new System.Drawing.Size(45, 13);
             this.lCif.TabIndex = 0;
             this.lCif.Text = "CIF/NIF";
             // 
             // lTipoCliente
             // 
             this.lTipoCliente.AutoSize = true;
-            this.lTipoCliente.Location = new System.Drawing.Point(601, 20);
-            this.lTipoCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTipoCliente.Location = new System.Drawing.Point(451, 16);
             this.lTipoCliente.Name = "lTipoCliente";
-            this.lTipoCliente.Size = new System.Drawing.Size(103, 17);
+            this.lTipoCliente.Size = new System.Drawing.Size(78, 13);
             this.lTipoCliente.TabIndex = 0;
             this.lTipoCliente.Text = "Tipo de Cliente";
             // 
             // lApellido2
             // 
             this.lApellido2.AutoSize = true;
-            this.lApellido2.Location = new System.Drawing.Point(396, 20);
-            this.lApellido2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lApellido2.Location = new System.Drawing.Point(297, 16);
             this.lApellido2.Name = "lApellido2";
-            this.lApellido2.Size = new System.Drawing.Size(66, 17);
+            this.lApellido2.Size = new System.Drawing.Size(50, 13);
             this.lApellido2.TabIndex = 0;
             this.lApellido2.Text = "Apellido2";
             // 
             // tApellido2
             // 
-            this.tApellido2.Location = new System.Drawing.Point(400, 46);
-            this.tApellido2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tApellido2.Location = new System.Drawing.Point(300, 37);
             this.tApellido2.MaxLength = 50;
             this.tApellido2.Name = "tApellido2";
-            this.tApellido2.Size = new System.Drawing.Size(191, 22);
+            this.tApellido2.Size = new System.Drawing.Size(144, 20);
             this.tApellido2.TabIndex = 3;
             // 
             // tNombreFiscal
             // 
-            this.tNombreFiscal.Location = new System.Drawing.Point(12, 103);
-            this.tNombreFiscal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tNombreFiscal.Location = new System.Drawing.Point(9, 84);
             this.tNombreFiscal.MaxLength = 100;
             this.tNombreFiscal.Name = "tNombreFiscal";
-            this.tNombreFiscal.Size = new System.Drawing.Size(867, 22);
+            this.tNombreFiscal.Size = new System.Drawing.Size(651, 20);
             this.tNombreFiscal.TabIndex = 6;
             // 
             // tNombre
             // 
-            this.tNombre.Location = new System.Drawing.Point(12, 46);
-            this.tNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tNombre.Location = new System.Drawing.Point(9, 37);
             this.tNombre.MaxLength = 50;
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(179, 22);
+            this.tNombre.Size = new System.Drawing.Size(135, 20);
             this.tNombre.TabIndex = 1;
             // 
             // tCif
             // 
             this.tCif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tCif.Location = new System.Drawing.Point(1107, 46);
-            this.tCif.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tCif.Location = new System.Drawing.Point(830, 37);
             this.tCif.MaxLength = 10;
             this.tCif.Name = "tCif";
-            this.tCif.Size = new System.Drawing.Size(183, 22);
+            this.tCif.Size = new System.Drawing.Size(138, 20);
             this.tCif.TabIndex = 5;
             // 
             // tApellido1
             // 
-            this.tApellido1.Location = new System.Drawing.Point(200, 46);
-            this.tApellido1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tApellido1.Location = new System.Drawing.Point(150, 37);
             this.tApellido1.MaxLength = 50;
             this.tApellido1.Name = "tApellido1";
-            this.tApellido1.Size = new System.Drawing.Size(191, 22);
+            this.tApellido1.Size = new System.Drawing.Size(144, 20);
             this.tApellido1.TabIndex = 2;
             // 
             // lApellido1
             // 
             this.lApellido1.AutoSize = true;
-            this.lApellido1.Location = new System.Drawing.Point(196, 20);
-            this.lApellido1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lApellido1.Location = new System.Drawing.Point(147, 16);
             this.lApellido1.Name = "lApellido1";
-            this.lApellido1.Size = new System.Drawing.Size(66, 17);
+            this.lApellido1.Size = new System.Drawing.Size(50, 13);
             this.lApellido1.TabIndex = 0;
             this.lApellido1.Text = "Apellido1";
             // 
@@ -284,11 +269,9 @@
             this.gDireccion.Controls.Add(this.lBloque);
             this.gDireccion.Controls.Add(this.tNumero);
             this.gDireccion.Controls.Add(this.lNumero);
-            this.gDireccion.Location = new System.Drawing.Point(4, 140);
-            this.gDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gDireccion.Location = new System.Drawing.Point(3, 113);
             this.gDireccion.Name = "gDireccion";
-            this.gDireccion.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gDireccion.Size = new System.Drawing.Size(1299, 209);
+            this.gDireccion.Size = new System.Drawing.Size(974, 170);
             this.gDireccion.TabIndex = 1;
             this.gDireccion.TabStop = false;
             this.gDireccion.Text = "Domicilio";
@@ -298,10 +281,9 @@
             this.cProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cProvincia.Enabled = false;
             this.cProvincia.FormattingEnabled = true;
-            this.cProvincia.Location = new System.Drawing.Point(719, 108);
-            this.cProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cProvincia.Location = new System.Drawing.Point(539, 88);
             this.cProvincia.Name = "cProvincia";
-            this.cProvincia.Size = new System.Drawing.Size(301, 24);
+            this.cProvincia.Size = new System.Drawing.Size(227, 21);
             this.cProvincia.TabIndex = 17;
             // 
             // cTipoPoblacion
@@ -309,295 +291,265 @@
             this.cTipoPoblacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cTipoPoblacion.Enabled = false;
             this.cTipoPoblacion.FormattingEnabled = true;
-            this.cTipoPoblacion.Location = new System.Drawing.Point(357, 108);
-            this.cTipoPoblacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cTipoPoblacion.Location = new System.Drawing.Point(268, 88);
             this.cTipoPoblacion.Name = "cTipoPoblacion";
-            this.cTipoPoblacion.Size = new System.Drawing.Size(160, 24);
+            this.cTipoPoblacion.Size = new System.Drawing.Size(121, 21);
             this.cTipoPoblacion.TabIndex = 16;
             // 
             // cPoblacion
             // 
             this.cPoblacion.Enabled = false;
             this.cPoblacion.FormattingEnabled = true;
-            this.cPoblacion.Location = new System.Drawing.Point(12, 108);
-            this.cPoblacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cPoblacion.Location = new System.Drawing.Point(9, 88);
             this.cPoblacion.Name = "cPoblacion";
-            this.cPoblacion.Size = new System.Drawing.Size(336, 24);
+            this.cPoblacion.Size = new System.Drawing.Size(253, 21);
             this.cPoblacion.TabIndex = 15;
-            this.cPoblacion.SelectedValueChanged += new System.EventHandler(this.seleccionaTipoyProvincia);
+            this.cPoblacion.SelectionChangeCommitted += new System.EventHandler(this.seleccionaTipoyProvincia);
+            this.cPoblacion.TabIndexChanged += new System.EventHandler(this.seleccionaTipoyProvincia);
             // 
             // lFax
             // 
             this.lFax.AutoSize = true;
-            this.lFax.Location = new System.Drawing.Point(1103, 148);
-            this.lFax.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lFax.Location = new System.Drawing.Point(827, 120);
             this.lFax.Name = "lFax";
-            this.lFax.Size = new System.Drawing.Size(30, 17);
+            this.lFax.Size = new System.Drawing.Size(24, 13);
             this.lFax.TabIndex = 0;
             this.lFax.Text = "Fax";
             // 
             // lTelefono2
             // 
             this.lTelefono2.AutoSize = true;
-            this.lTelefono2.Location = new System.Drawing.Point(1103, 84);
-            this.lTelefono2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTelefono2.Location = new System.Drawing.Point(827, 68);
             this.lTelefono2.Name = "lTelefono2";
-            this.lTelefono2.Size = new System.Drawing.Size(72, 17);
+            this.lTelefono2.Size = new System.Drawing.Size(55, 13);
             this.lTelefono2.TabIndex = 0;
             this.lTelefono2.Text = "Telefono2";
             // 
             // lTelefono1
             // 
             this.lTelefono1.AutoSize = true;
-            this.lTelefono1.Location = new System.Drawing.Point(1103, 20);
-            this.lTelefono1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTelefono1.Location = new System.Drawing.Point(827, 16);
             this.lTelefono1.Name = "lTelefono1";
-            this.lTelefono1.Size = new System.Drawing.Size(72, 17);
+            this.lTelefono1.Size = new System.Drawing.Size(55, 13);
             this.lTelefono1.TabIndex = 0;
             this.lTelefono1.Text = "Telefono1";
             // 
             // lWeb
             // 
             this.lWeb.AutoSize = true;
-            this.lWeb.Location = new System.Drawing.Point(8, 142);
-            this.lWeb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lWeb.Location = new System.Drawing.Point(6, 115);
             this.lWeb.Name = "lWeb";
-            this.lWeb.Size = new System.Drawing.Size(72, 17);
+            this.lWeb.Size = new System.Drawing.Size(56, 13);
             this.lWeb.TabIndex = 0;
             this.lWeb.Text = "Sitio Web:";
             // 
             // lContacto
             // 
             this.lContacto.AutoSize = true;
-            this.lContacto.Location = new System.Drawing.Point(601, 142);
-            this.lContacto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lContacto.Location = new System.Drawing.Point(451, 115);
             this.lContacto.Name = "lContacto";
-            this.lContacto.Size = new System.Drawing.Size(64, 17);
+            this.lContacto.Size = new System.Drawing.Size(50, 13);
             this.lContacto.TabIndex = 0;
             this.lContacto.Text = "Contacto";
             // 
             // lProvincia
             // 
             this.lProvincia.AutoSize = true;
-            this.lProvincia.Location = new System.Drawing.Point(715, 82);
-            this.lProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lProvincia.Location = new System.Drawing.Point(536, 67);
             this.lProvincia.Name = "lProvincia";
-            this.lProvincia.Size = new System.Drawing.Size(66, 17);
+            this.lProvincia.Size = new System.Drawing.Size(51, 13);
             this.lProvincia.TabIndex = 0;
             this.lProvincia.Text = "Provincia";
             // 
             // lTipoPoblacion
             // 
             this.lTipoPoblacion.AutoSize = true;
-            this.lTipoPoblacion.Location = new System.Drawing.Point(353, 84);
-            this.lTipoPoblacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lTipoPoblacion.Location = new System.Drawing.Point(265, 68);
             this.lTipoPoblacion.Name = "lTipoPoblacion";
-            this.lTipoPoblacion.Size = new System.Drawing.Size(40, 17);
+            this.lTipoPoblacion.Size = new System.Drawing.Size(31, 13);
             this.lTipoPoblacion.TabIndex = 0;
             this.lTipoPoblacion.Text = "Tipo:";
             // 
             // lPostal
             // 
             this.lPostal.AutoSize = true;
-            this.lPostal.Location = new System.Drawing.Point(523, 82);
-            this.lPostal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPostal.Location = new System.Drawing.Point(392, 67);
             this.lPostal.Name = "lPostal";
-            this.lPostal.Size = new System.Drawing.Size(95, 17);
+            this.lPostal.Size = new System.Drawing.Size(72, 13);
             this.lPostal.TabIndex = 0;
             this.lPostal.Text = "Código Postal";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(6, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 17);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Población";
             // 
             // lDireccion
             // 
             this.lDireccion.AutoSize = true;
-            this.lDireccion.Location = new System.Drawing.Point(8, 20);
-            this.lDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lDireccion.Location = new System.Drawing.Point(6, 16);
             this.lDireccion.Name = "lDireccion";
-            this.lDireccion.Size = new System.Drawing.Size(67, 17);
+            this.lDireccion.Size = new System.Drawing.Size(52, 13);
             this.lDireccion.TabIndex = 0;
             this.lDireccion.Text = "Dirección";
             // 
             // tDireccion
             // 
-            this.tDireccion.Location = new System.Drawing.Point(12, 46);
-            this.tDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tDireccion.Location = new System.Drawing.Point(9, 37);
             this.tDireccion.MaxLength = 100;
             this.tDireccion.Name = "tDireccion";
-            this.tDireccion.Size = new System.Drawing.Size(579, 22);
+            this.tDireccion.Size = new System.Drawing.Size(435, 20);
             this.tDireccion.TabIndex = 0;
             // 
             // tPuerta
             // 
-            this.tPuerta.Location = new System.Drawing.Point(959, 46);
-            this.tPuerta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tPuerta.Location = new System.Drawing.Point(719, 37);
             this.tPuerta.MaxLength = 10;
             this.tPuerta.Name = "tPuerta";
-            this.tPuerta.Size = new System.Drawing.Size(61, 22);
+            this.tPuerta.Size = new System.Drawing.Size(47, 20);
             this.tPuerta.TabIndex = 6;
             // 
             // lPuerta
             // 
             this.lPuerta.AutoSize = true;
-            this.lPuerta.Location = new System.Drawing.Point(955, 20);
-            this.lPuerta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPuerta.Location = new System.Drawing.Point(716, 16);
             this.lPuerta.Name = "lPuerta";
-            this.lPuerta.Size = new System.Drawing.Size(33, 17);
+            this.lPuerta.Size = new System.Drawing.Size(26, 13);
             this.lPuerta.TabIndex = 0;
             this.lPuerta.Text = "Pta.";
             // 
             // tFax
             // 
-            this.tFax.Location = new System.Drawing.Point(1107, 167);
-            this.tFax.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tFax.Location = new System.Drawing.Point(830, 136);
             this.tFax.MaxLength = 20;
             this.tFax.Name = "tFax";
-            this.tFax.Size = new System.Drawing.Size(183, 22);
+            this.tFax.Size = new System.Drawing.Size(138, 20);
             this.tFax.TabIndex = 14;
             // 
             // tTelefono2
             // 
-            this.tTelefono2.Location = new System.Drawing.Point(1107, 108);
-            this.tTelefono2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tTelefono2.Location = new System.Drawing.Point(830, 88);
             this.tTelefono2.MaxLength = 20;
             this.tTelefono2.Name = "tTelefono2";
-            this.tTelefono2.Size = new System.Drawing.Size(183, 22);
+            this.tTelefono2.Size = new System.Drawing.Size(138, 20);
             this.tTelefono2.TabIndex = 11;
             // 
             // tTelefono1
             // 
-            this.tTelefono1.Location = new System.Drawing.Point(1107, 46);
-            this.tTelefono1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tTelefono1.Location = new System.Drawing.Point(830, 37);
             this.tTelefono1.MaxLength = 20;
             this.tTelefono1.Name = "tTelefono1";
-            this.tTelefono1.Size = new System.Drawing.Size(183, 22);
+            this.tTelefono1.Size = new System.Drawing.Size(138, 20);
             this.tTelefono1.TabIndex = 7;
             // 
             // tWeb
             // 
-            this.tWeb.Location = new System.Drawing.Point(12, 167);
-            this.tWeb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tWeb.Location = new System.Drawing.Point(9, 136);
             this.tWeb.Name = "tWeb";
-            this.tWeb.Size = new System.Drawing.Size(579, 22);
+            this.tWeb.Size = new System.Drawing.Size(435, 20);
             this.tWeb.TabIndex = 12;
             // 
             // tContacto
             // 
-            this.tContacto.Location = new System.Drawing.Point(605, 167);
-            this.tContacto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tContacto.Location = new System.Drawing.Point(454, 136);
             this.tContacto.Name = "tContacto";
-            this.tContacto.Size = new System.Drawing.Size(415, 22);
+            this.tContacto.Size = new System.Drawing.Size(312, 20);
             this.tContacto.TabIndex = 13;
             // 
             // TPostal
             // 
-            this.TPostal.Location = new System.Drawing.Point(527, 108);
-            this.TPostal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TPostal.Location = new System.Drawing.Point(395, 88);
             this.TPostal.Name = "TPostal";
-            this.TPostal.Size = new System.Drawing.Size(179, 22);
+            this.TPostal.Size = new System.Drawing.Size(135, 20);
             this.TPostal.TabIndex = 9;
             this.TPostal.Leave += new System.EventHandler(this.editarCPostal);
             // 
             // tPlanta
             // 
-            this.tPlanta.Location = new System.Drawing.Point(888, 46);
-            this.tPlanta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tPlanta.Location = new System.Drawing.Point(666, 37);
             this.tPlanta.MaxLength = 2;
             this.tPlanta.Name = "tPlanta";
-            this.tPlanta.Size = new System.Drawing.Size(61, 22);
+            this.tPlanta.Size = new System.Drawing.Size(47, 20);
             this.tPlanta.TabIndex = 5;
             // 
             // lPlanta
             // 
             this.lPlanta.AutoSize = true;
-            this.lPlanta.Location = new System.Drawing.Point(884, 20);
-            this.lPlanta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPlanta.Location = new System.Drawing.Point(663, 16);
             this.lPlanta.Name = "lPlanta";
-            this.lPlanta.Size = new System.Drawing.Size(24, 17);
+            this.lPlanta.Size = new System.Drawing.Size(19, 13);
             this.lPlanta.TabIndex = 0;
             this.lPlanta.Text = "Pl.";
             // 
             // tPortal
             // 
-            this.tPortal.Location = new System.Drawing.Point(817, 46);
-            this.tPortal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tPortal.Location = new System.Drawing.Point(613, 37);
             this.tPortal.MaxLength = 2;
             this.tPortal.Name = "tPortal";
-            this.tPortal.Size = new System.Drawing.Size(61, 22);
+            this.tPortal.Size = new System.Drawing.Size(47, 20);
             this.tPortal.TabIndex = 4;
             // 
             // lPortal
             // 
             this.lPortal.AutoSize = true;
-            this.lPortal.Location = new System.Drawing.Point(813, 20);
-            this.lPortal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lPortal.Location = new System.Drawing.Point(610, 16);
             this.lPortal.Name = "lPortal";
-            this.lPortal.Size = new System.Drawing.Size(28, 17);
+            this.lPortal.Size = new System.Drawing.Size(22, 13);
             this.lPortal.TabIndex = 0;
             this.lPortal.Text = "Ptl.";
             // 
             // tEscalera
             // 
-            this.tEscalera.Location = new System.Drawing.Point(747, 46);
-            this.tEscalera.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tEscalera.Location = new System.Drawing.Point(560, 37);
             this.tEscalera.MaxLength = 2;
             this.tEscalera.Name = "tEscalera";
-            this.tEscalera.Size = new System.Drawing.Size(61, 22);
+            this.tEscalera.Size = new System.Drawing.Size(47, 20);
             this.tEscalera.TabIndex = 3;
             // 
             // lEscalera
             // 
             this.lEscalera.AutoSize = true;
-            this.lEscalera.Location = new System.Drawing.Point(743, 20);
-            this.lEscalera.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lEscalera.Location = new System.Drawing.Point(557, 16);
             this.lEscalera.Name = "lEscalera";
-            this.lEscalera.Size = new System.Drawing.Size(35, 17);
+            this.lEscalera.Size = new System.Drawing.Size(28, 13);
             this.lEscalera.TabIndex = 0;
             this.lEscalera.Text = "Esc.";
             // 
             // tBloque
             // 
-            this.tBloque.Location = new System.Drawing.Point(676, 46);
-            this.tBloque.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBloque.Location = new System.Drawing.Point(507, 37);
             this.tBloque.MaxLength = 2;
             this.tBloque.Name = "tBloque";
-            this.tBloque.Size = new System.Drawing.Size(61, 22);
+            this.tBloque.Size = new System.Drawing.Size(47, 20);
             this.tBloque.TabIndex = 2;
             // 
             // lBloque
             // 
             this.lBloque.AutoSize = true;
-            this.lBloque.Location = new System.Drawing.Point(672, 20);
-            this.lBloque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lBloque.Location = new System.Drawing.Point(504, 16);
             this.lBloque.Name = "lBloque";
-            this.lBloque.Size = new System.Drawing.Size(32, 17);
+            this.lBloque.Size = new System.Drawing.Size(25, 13);
             this.lBloque.TabIndex = 0;
             this.lBloque.Text = "Blq.";
             // 
             // tNumero
             // 
-            this.tNumero.Location = new System.Drawing.Point(605, 46);
-            this.tNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tNumero.Location = new System.Drawing.Point(454, 37);
             this.tNumero.MaxLength = 4;
             this.tNumero.Name = "tNumero";
-            this.tNumero.Size = new System.Drawing.Size(61, 22);
+            this.tNumero.Size = new System.Drawing.Size(47, 20);
             this.tNumero.TabIndex = 1;
             // 
             // lNumero
             // 
             this.lNumero.AutoSize = true;
-            this.lNumero.Location = new System.Drawing.Point(601, 20);
-            this.lNumero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lNumero.Location = new System.Drawing.Point(451, 16);
             this.lNumero.Name = "lNumero";
-            this.lNumero.Size = new System.Drawing.Size(23, 17);
+            this.lNumero.Size = new System.Drawing.Size(19, 13);
             this.lNumero.TabIndex = 0;
             this.lNumero.Text = "Nº";
             // 
@@ -611,15 +563,13 @@
             this.gOtros.Controls.Add(this.lDescuento);
             this.gOtros.Controls.Add(this.tIrpf);
             this.gOtros.Controls.Add(this.tBic);
-            this.gOtros.Controls.Add(this.textBox4);
+            this.gOtros.Controls.Add(this.tObservaciones);
             this.gOtros.Controls.Add(this.tIban);
             this.gOtros.Controls.Add(this.tDiasPago);
             this.gOtros.Controls.Add(this.tDescuento);
-            this.gOtros.Location = new System.Drawing.Point(4, 357);
-            this.gOtros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gOtros.Location = new System.Drawing.Point(3, 289);
             this.gOtros.Name = "gOtros";
-            this.gOtros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gOtros.Size = new System.Drawing.Size(1299, 241);
+            this.gOtros.Size = new System.Drawing.Size(974, 196);
             this.gOtros.TabIndex = 2;
             this.gOtros.TabStop = false;
             this.gOtros.Text = "Otros";
@@ -627,125 +577,112 @@
             // lIrpf
             // 
             this.lIrpf.AutoSize = true;
-            this.lIrpf.Location = new System.Drawing.Point(805, 16);
-            this.lIrpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lIrpf.Location = new System.Drawing.Point(604, 13);
             this.lIrpf.Name = "lIrpf";
-            this.lIrpf.Size = new System.Drawing.Size(38, 17);
+            this.lIrpf.Size = new System.Drawing.Size(31, 13);
             this.lIrpf.TabIndex = 0;
             this.lIrpf.Text = "IRPF";
             // 
             // lBic
             // 
             this.lBic.AutoSize = true;
-            this.lBic.Location = new System.Drawing.Point(601, 16);
-            this.lBic.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lBic.Location = new System.Drawing.Point(451, 13);
             this.lBic.Name = "lBic";
-            this.lBic.Size = new System.Drawing.Size(29, 17);
+            this.lBic.Size = new System.Drawing.Size(24, 13);
             this.lBic.TabIndex = 0;
             this.lBic.Text = "BIC";
             // 
             // lObservaciones
             // 
             this.lObservaciones.AutoSize = true;
-            this.lObservaciones.Location = new System.Drawing.Point(8, 76);
-            this.lObservaciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lObservaciones.Location = new System.Drawing.Point(6, 62);
             this.lObservaciones.Name = "lObservaciones";
-            this.lObservaciones.Size = new System.Drawing.Size(103, 17);
+            this.lObservaciones.Size = new System.Drawing.Size(78, 13);
             this.lObservaciones.TabIndex = 0;
             this.lObservaciones.Text = "Observaciones";
             // 
             // lIban
             // 
             this.lIban.AutoSize = true;
-            this.lIban.Location = new System.Drawing.Point(208, 16);
-            this.lIban.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lIban.Location = new System.Drawing.Point(156, 13);
             this.lIban.Name = "lIban";
-            this.lIban.Size = new System.Drawing.Size(39, 17);
+            this.lIban.Size = new System.Drawing.Size(32, 13);
             this.lIban.TabIndex = 0;
             this.lIban.Text = "IBAN";
             // 
             // lDiasPago
             // 
             this.lDiasPago.AutoSize = true;
-            this.lDiasPago.Location = new System.Drawing.Point(115, 16);
-            this.lDiasPago.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lDiasPago.Location = new System.Drawing.Point(86, 13);
             this.lDiasPago.Name = "lDiasPago";
-            this.lDiasPago.Size = new System.Drawing.Size(73, 17);
+            this.lDiasPago.Size = new System.Drawing.Size(58, 13);
             this.lDiasPago.TabIndex = 0;
             this.lDiasPago.Text = "Días Pago";
             // 
             // lDescuento
             // 
             this.lDescuento.AutoSize = true;
-            this.lDescuento.Location = new System.Drawing.Point(8, 16);
-            this.lDescuento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lDescuento.Location = new System.Drawing.Point(6, 13);
             this.lDescuento.Name = "lDescuento";
-            this.lDescuento.Size = new System.Drawing.Size(92, 17);
+            this.lDescuento.Size = new System.Drawing.Size(70, 13);
             this.lDescuento.TabIndex = 0;
             this.lDescuento.Text = "% Descuento";
             // 
             // tIrpf
             // 
-            this.tIrpf.Location = new System.Drawing.Point(809, 42);
-            this.tIrpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tIrpf.Location = new System.Drawing.Point(607, 34);
             this.tIrpf.MaxLength = 2;
             this.tIrpf.Name = "tIrpf";
-            this.tIrpf.Size = new System.Drawing.Size(179, 22);
+            this.tIrpf.Size = new System.Drawing.Size(135, 20);
             this.tIrpf.TabIndex = 4;
             // 
             // tBic
             // 
-            this.tBic.Location = new System.Drawing.Point(605, 42);
-            this.tBic.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBic.Location = new System.Drawing.Point(454, 34);
             this.tBic.MaxLength = 11;
             this.tBic.Name = "tBic";
-            this.tBic.Size = new System.Drawing.Size(179, 22);
+            this.tBic.Size = new System.Drawing.Size(135, 20);
             this.tBic.TabIndex = 3;
             // 
-            // textBox4
+            // tObservaciones
             // 
-            this.textBox4.Location = new System.Drawing.Point(12, 102);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox4.MaxLength = 1000;
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1277, 126);
-            this.textBox4.TabIndex = 5;
+            this.tObservaciones.Location = new System.Drawing.Point(9, 83);
+            this.tObservaciones.MaxLength = 1000;
+            this.tObservaciones.Multiline = true;
+            this.tObservaciones.Name = "tObservaciones";
+            this.tObservaciones.Size = new System.Drawing.Size(959, 103);
+            this.tObservaciones.TabIndex = 5;
             // 
             // tIban
             // 
-            this.tIban.Location = new System.Drawing.Point(212, 42);
-            this.tIban.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tIban.Location = new System.Drawing.Point(159, 34);
             this.tIban.MaxLength = 24;
             this.tIban.Name = "tIban";
-            this.tIban.Size = new System.Drawing.Size(367, 22);
+            this.tIban.Size = new System.Drawing.Size(276, 20);
             this.tIban.TabIndex = 2;
             // 
             // tDiasPago
             // 
-            this.tDiasPago.Location = new System.Drawing.Point(119, 42);
-            this.tDiasPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tDiasPago.Location = new System.Drawing.Point(89, 34);
             this.tDiasPago.MaxLength = 3;
             this.tDiasPago.Name = "tDiasPago";
-            this.tDiasPago.Size = new System.Drawing.Size(72, 22);
+            this.tDiasPago.Size = new System.Drawing.Size(55, 20);
             this.tDiasPago.TabIndex = 1;
             // 
             // tDescuento
             // 
-            this.tDescuento.Location = new System.Drawing.Point(12, 42);
-            this.tDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tDescuento.Location = new System.Drawing.Point(9, 34);
             this.tDescuento.MaxLength = 2;
             this.tDescuento.Name = "tDescuento";
-            this.tDescuento.Size = new System.Drawing.Size(88, 22);
+            this.tDescuento.Size = new System.Drawing.Size(67, 20);
             this.tDescuento.TabIndex = 0;
             this.tDescuento.Text = "0";
             // 
             // btAñadirCliente
             // 
-            this.btAñadirCliente.Location = new System.Drawing.Point(4, 606);
-            this.btAñadirCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btAñadirCliente.Location = new System.Drawing.Point(3, 491);
             this.btAñadirCliente.Name = "btAñadirCliente";
-            this.btAñadirCliente.Size = new System.Drawing.Size(112, 28);
+            this.btAñadirCliente.Size = new System.Drawing.Size(84, 23);
             this.btAñadirCliente.TabIndex = 2;
             this.btAñadirCliente.Text = "Añadir Cliente";
             this.btAñadirCliente.UseVisualStyleBackColor = true;
@@ -753,21 +690,20 @@
             // 
             // btCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(124, 606);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btCancelar.Location = new System.Drawing.Point(93, 491);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(100, 28);
+            this.btCancelar.Size = new System.Drawing.Size(75, 23);
             this.btCancelar.TabIndex = 3;
             this.btCancelar.Text = "Cancelar";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.BtCancelar_Click);
             // 
             // FormClientesAñadir
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 690);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormClientesAñadir";
             this.Text = "AñadirCliente";
             this.Load += new System.EventHandler(this.inicializar);
@@ -833,7 +769,7 @@
         private System.Windows.Forms.Label lIrpf;
         private System.Windows.Forms.TextBox tIrpf;
         private System.Windows.Forms.Label lObservaciones;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tObservaciones;
         private System.Windows.Forms.ComboBox cTipoCliente;
         private System.Windows.Forms.Label lTipoCliente;
         private System.Windows.Forms.Label lNombreFiscal;

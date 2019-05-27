@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace facturacion.Data
 {
+    /// <summary>
+    /// Clase encargada de crear la base de datos.
+    /// </summary>
     class FacturacionContext : DbContext
     {
         
@@ -32,18 +35,34 @@ namespace facturacion.Data
         public virtual DbSet<Transportista> Transportistas{ get; set; }
         public virtual DbSet<Ubicaciones> Ubicaciones { get; set; }
 
+        /// <summary>
+        /// Constructor de la clase, hereda desde un ConnectionString, o bien se le proporciona
+        /// uno manualmente. Ej ("MiDB")
+        /// </summary>
         public FacturacionContext() : base(ConexionDB.Conexion())
         {
-            Database.SetInitializer(new FacturacionInitializer());
-            
-
+            Database.SetInitializer(new FacturacionInitializer());        
+           
         }
 
+        /// <summary>
+        /// Modifica parámetros al crear la base de datos.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            
-            
+                        
+        }
+
+        public class configuracion : DbConfiguration
+        {
+            public configuracion()
+            {
+                SetDatabaseLogFormatter(
+                    (context, writeAction) => new OneLineLog(context, writeAction));
+                                
+            }
         }
     }
 }

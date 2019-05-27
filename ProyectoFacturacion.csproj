@@ -61,7 +61,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -96,9 +96,11 @@
     <Compile Include="Business\Poblaciones.cs" />
     <Compile Include="Classes\ConexionDB.cs" />
     <Compile Include="Classes\Encrypt.cs" />
+    <Compile Include="Classes\Logger.cs" />
     <Compile Include="Classes\VariablesGlobales.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />
+    <Compile Include="Data\OneLineLog.cs" />
     <Compile Include="Factory.cs" />
     <Compile Include="Migrations\201905211004152_InitialCreate.cs" />
     <Compile Include="Migrations\201905211004152_InitialCreate.Designer.cs">
@@ -201,7 +203,6 @@
     <None Include="Properties\DataSources\facturacion.Model.TipoPago.datasource" />
     <None Include="Properties\DataSources\facturacion.Model.Transportista.datasource" />
     <None Include="Properties\DataSources\facturacion.Model.Ubicaciones.datasource" />
-    <None Include="ProyectoFacturacion_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

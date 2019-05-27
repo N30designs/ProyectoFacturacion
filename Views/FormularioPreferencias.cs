@@ -63,6 +63,12 @@ namespace facturacion.Views
                 tBaseDatos.Text = key.GetValue("DBDatabase").ToString();
                 tUsuario.Text = key.GetValue("DBUser").ToString();
                 tContraseña.Text = Encrypt.DesencriptaBase64(key.GetValue("DBPassword").ToString());
+                if (key.GetValue("DBLocal").ToString().Equals("1"))
+                    cBaseDatosLocal.Checked = true;
+                if (key.GetValue("DBSeguridadIntegrada").ToString().Equals("1"))
+                    cSeguridadIntegrada.Checked = true;
+
+
             }
 
         }

@@ -84,6 +84,11 @@ namespace facturacion.Views
                     c1.Irpf = int.Parse(tIrpf.Text);
 
                 clientes.NuevoCliente(c1);
+
+                MessageBox.Show("El cliente se ha guardado correctamente.");
+
+                resetCampos();
+                
             }
             else
             {
@@ -91,11 +96,13 @@ namespace facturacion.Views
                 TPostal.Clear();
                 cTipoPoblacion.SelectedIndex = -1;
                 cTipoPoblacion.Enabled = false;
-                cPoblacion.SelectedIndex = -1;
+                cPoblacion.DataSource = null;
+                cPoblacion.Items.Clear();
                 cPoblacion.Enabled = false;
                 cProvincia.SelectedIndex = -1;
                 cProvincia.Enabled = false;
                 MessageBox.Show("Se ha creado la nueva población, por favor antes de guardar seleccione la nueva población.");
+                poblacionNueva = false;
 
             }
         }
@@ -139,6 +146,7 @@ namespace facturacion.Views
                 {
                     cPoblacion.Enabled = true;
                     cProvincia.Enabled = true;
+                    cTipoPoblacion.Enabled = true;
                     poblacionNueva = true;
                 }
                 else
@@ -156,9 +164,12 @@ namespace facturacion.Views
         /// <param name="e"></param>
         public void seleccionaTipoyProvincia(object sender, EventArgs e)
         {
-            //cTipoPoblacion.Enabled = true;
-            //cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
-            //cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+            if (!string.IsNullOrEmpty(cPoblacion.SelectedValue.ToString()))
+            {
+                cTipoPoblacion.Enabled = true;
+                cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+                cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+            }
         }
 
         /// <summary>
@@ -186,6 +197,54 @@ namespace facturacion.Views
             cProvincia.SelectedIndex = -1;
             
         }
-                
+
+
+        /// <summary>
+        /// Método para resetear el valor del formulario
+        /// </summary>
+        public void resetCampos()
+        {
+            tNombre.Clear();
+            tApellido1.Clear();
+            tApellido2.Clear();
+            cTipoCliente.SelectedIndex = -1;
+            tCif.Clear();
+            tNombreFiscal.Clear();
+            tDireccion.Clear();
+            tNumero.Clear();
+            tBloque.Clear();
+            tEscalera.Clear();
+            tPortal.Clear();
+            tPlanta.Clear();
+            tPuerta.Clear();
+            if (cPoblacion.DropDownStyle == ComboBoxStyle.DropDownList)
+                cPoblacion.DropDownStyle = ComboBoxStyle.DropDown;
+            cPoblacion.DataSource = null;
+            cPoblacion.Items.Clear();
+            cTipoPoblacion.SelectedIndex = -1;
+            TPostal.Clear();
+            cProvincia.SelectedIndex = -1;
+            tWeb.Clear();
+            tContacto.Clear();
+            tTelefono1.Clear();
+            tTelefono2.Clear();
+            tFax.Clear();
+            tDescuento.Clear();
+            tDiasPago.Clear();
+            tIban.Clear();
+            tBic.Clear();
+            tIrpf.Clear();
+            tObservaciones.Clear();
+        }
+
+        /// <summary>
+        /// Ejecuta la acción resetCampos (borra el valor de todo el formulario)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtCancelar_Click(object sender, EventArgs e)
+        {
+            resetCampos();
+        }
     }
 }

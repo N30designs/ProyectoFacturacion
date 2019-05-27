@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using System.Data.Entity.Validation;
 using System.Collections.Generic;
+using facturacion.Classes;
 
 namespace facturacion.Business
 {
@@ -54,13 +55,15 @@ namespace facturacion.Business
         {
             using (FacturacionContext context = new FacturacionContext())
             {
+                var logger = new Logger();
+                context.Database.Log = l => logger.Log("Nuevo Cliente", 0, l.ToString());
                 try
                 {
                     cliente.Creacion = DateTime.Now;
                     cliente.Modificacion = DateTime.Now;
                     context.Clientes.Add(cliente);
 
-                    context.SaveChanges();                    
+                    context.SaveChangesAsync().Wait();                    
                 }
                 catch (DbEntityValidationException ex)
                 {
