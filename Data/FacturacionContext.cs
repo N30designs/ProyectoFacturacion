@@ -13,7 +13,16 @@ namespace facturacion.Data
     /// </summary>
     class FacturacionContext : DbContext
     {
-        
+        public FacturacionContext() : base()
+        {
+
+        }
+
+        public FacturacionContext(string conection) : base(conection)
+        {
+
+        }
+
         public virtual DbSet<Albaran> Albaranes { get; set; }
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<DetalleFactura> DetalleFacturas{ get; set; }

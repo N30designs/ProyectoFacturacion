@@ -1,14 +1,10 @@
 ﻿using facturacion.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace facturacion.Views
@@ -37,9 +33,23 @@ namespace facturacion.Views
                 $"{Dns.GetHostAddresses(Environment.MachineName).Where(i=> i.IsIPv6LinkLocal == false && i.IsIPv6Multicast == false && i.IsIPv6SiteLocal == false).FirstOrDefault().ToString()}" +
                 $" y MAC: {NetworkInterface.GetAllNetworkInterfaces().Where(n=> n.OperationalStatus == OperationalStatus.Up && n.NetworkInterfaceType != NetworkInterfaceType.Loopback).FirstOrDefault().GetPhysicalAddress()} ");
             IsMdiContainer = true;
-            
-
+                       
             InitializeComponent();
+
+            Configuration config = ConfigurationManager.
+           OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            ConnectionStringsSection configSection =
+                config.GetSection("connectionStrings")
+                as ConnectionStringsSection;
+
+            if (configSection != null && !configSection.SectionInformation.IsProtected)
+                if (!configSection.ElementInformation.IsLocked)
+                {
+                    configSection.SectionInformation.ProtectSection("DataProtectionConfigurationProvider");
+                    configSection.SectionInformation.ForceSave = true;
+                    config.Save(ConfigurationSaveMode.Full);
+                }
         }
        
         /// <summary>

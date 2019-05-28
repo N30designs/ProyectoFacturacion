@@ -77,6 +77,10 @@ namespace facturacion.Classes
 
             }
 
+            //Uso NLog
+            var nlog = NLog.LogManager.GetCurrentClassLogger();
+            nlog.Info(msg);
+
         }
 
     }

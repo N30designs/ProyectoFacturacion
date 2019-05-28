@@ -79,6 +79,26 @@ namespace facturacion.Business
                 }
                 catch (DbEntityValidationException ex)
                 {
+                    /*EJEMPLO DE GESTION DE ERRORES EF
+                     * // Retrieve the error messages as a list of strings.
+                    var errorMessages = ex.EntityValidationErrors
+                            .SelectMany(x => x.ValidationErrors)
+                            .Select(x => x.ErrorMessage);
+
+                    // Join the list to a single string.
+                    var fullErrorMessage = string.Join("; ", errorMessages);
+
+                    // Combine the original exception message with the new one.
+                    var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
+
+                    var log = NLog.LogManager.GetCurrentClassLogger();
+                    foreach (var e in ex.EntityValidationErrors)
+                    {
+                        log.Error(e.ValidationErrors.);
+                    }
+                    // Throw a new DbEntityValidationException with the improved exception message.
+                    throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);*/
+                                                                          
                     // Retrieve the error messages as a list of strings.
                     var errorMessages = ex.EntityValidationErrors
                             .SelectMany(x => x.ValidationErrors)
@@ -90,8 +110,14 @@ namespace facturacion.Business
                     // Combine the original exception message with the new one.
                     var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
 
+                    var log = NLog.LogManager.GetCurrentClassLogger();
+                    foreach (var e in ex.EntityValidationErrors)
+                    {
+                        //log.Error(e.ValidationErrors.Select(e => e.ErrorMessage);
+                    }
                     // Throw a new DbEntityValidationException with the improved exception message.
                     throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+
                     
                 }
             }
