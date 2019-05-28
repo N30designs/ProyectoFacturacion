@@ -72,8 +72,9 @@ namespace facturacion.Business
                 {
                     cliente.Creacion = DateTime.Now;
                     cliente.Modificacion = DateTime.Now;
+                    
                     context.Clientes.Add(cliente);
-
+                    
                     context.SaveChangesAsync().Wait();                    
                 }
                 catch (DbEntityValidationException ex)

@@ -63,6 +63,7 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -169,11 +170,11 @@
     <Compile Include="Views\FormularioPrincipal.Designer.cs">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormularioPreferencias.cs">
+    <Compile Include="Views\FormPreferencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\FormularioPreferencias.Designer.cs">
-      <DependentUpon>FormularioPreferencias.cs</DependentUpon>
+    <Compile Include="Views\FormPreferencias.Designer.cs">
+      <DependentUpon>FormPreferencias.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -251,8 +252,8 @@
     <EmbeddedResource Include="Views\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\FormularioPreferencias.resx">
-      <DependentUpon>FormularioPreferencias.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FormPreferencias.resx">
+      <DependentUpon>FormPreferencias.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

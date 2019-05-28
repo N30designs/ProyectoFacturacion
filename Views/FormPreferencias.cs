@@ -12,9 +12,9 @@ using facturacion.Classes;
 
 namespace facturacion.Views
 {
-    public partial class FormularioPreferencias : Form
+    public partial class FormPreferencias : Form
     {
-        public FormularioPreferencias()
+        public FormPreferencias()
         {
             InitializeComponent();
         }

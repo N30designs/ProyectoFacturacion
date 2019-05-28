@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using System.IO;
+
 
 namespace facturacion.Classes
 {
@@ -20,7 +19,64 @@ namespace facturacion.Classes
         /// <param name="mensaje">Mensaje que se archivará en el log.</param>
         public void Log(string componente, int gravedad , string mensaje)
         {
-            Console.WriteLine($"Componente: {componente}, Gravedad: {gravedad}, Hora del evento: {DateTime.Now} \n Mensaje: {mensaje}");
+            string msg = $"Componente: {componente}, Gravedad: {gravedad}, Hora del evento: {DateTime.Now} \n Mensaje: {mensaje}";
+            string msgtxt = $"{DateTime.Now};{gravedad};{mensaje}";
+            string log = "log";
+            var rutalog = @"log.txt";
+
+
+            /*Es posible personalizar la fuente de los logs creando una propia con con un código similar al siguiente, pero requiere
+             * permisos de administrador en la ejecución que derivan en diversos problemas. Todo ello es evitable si durante la instalación
+             * de la aplicación registramos estas fuentes.
+             * ----------------------------------------------------------
+             * try
+             *  {
+             *      if (!EventLog.SourceExists(VariablesGlobales.nombrePrograma))
+             *      {
+             *          EventLog.CreateEventSource(VariablesGlobales.nombrePrograma, log);
+             *          EventLog.WriteEntry(VariablesGlobales.nombrePrograma, String.Format($"Creado nuevo Origen de eventos, {VariablesGlobales.nombrePrograma}, {log}"), EventLogEntryType.Information);
+             *      }
+             *  }
+             *  catch (System.Security.SecurityException ex)
+             *  {
+             *      throw new Exception("Se requiere una elevación de privilegios para poder crear un nuevo tipo de evento en el sistema.");
+             *  }
+             * ----------------------------------------------------------------
+             */
+
+            //Mostramos por consola
+            Console.WriteLine(msg);
+
+            //Creamos un fichero de log
+            if (File.Exists(rutalog))
+            {
+                using (StreamWriter sw = new StreamWriter(rutalog, true))
+                {
+                    sw.WriteLine(msgtxt);
+                }
+
+                Console.WriteLine("He añadido filas");
+            }
+            else
+            {
+                File.WriteAllText(rutalog, msgtxt);
+                Console.WriteLine("He añadido fichero");
+            }
+
+            //Crea entrada en el registro del sistema (Leer mas arriba para mas detalles) 
+            using (EventLog eventLog = new EventLog("Application"))
+            {
+                eventLog.Source = "Application";
+
+                if (gravedad <= 5)
+                    eventLog.WriteEntry(msg, EventLogEntryType.Information);
+                else if (gravedad > 5 && gravedad <= 7)
+                    eventLog.WriteEntry(msg, EventLogEntryType.Warning);
+                else if (gravedad >= 8)
+                    eventLog.WriteEntry(msg, EventLogEntryType.Error);
+
+            }
+
         }
 
     }

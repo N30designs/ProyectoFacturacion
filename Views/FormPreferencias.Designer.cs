@@ -1,6 +1,6 @@
 ﻿namespace facturacion.Views
 {
-    partial class FormularioPreferencias
+    partial class FormPreferencias
     {
         /// <summary>
         /// Required designer variable.

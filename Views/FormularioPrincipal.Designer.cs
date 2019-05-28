@@ -141,7 +141,7 @@
             // 
             this.menuItem6.Index = 0;
             this.menuItem6.Text = "Preferencias";
-            this.menuItem6.Click += new System.EventHandler(this.menuItem6_Click);
+            this.menuItem6.Click += new System.EventHandler(this.AccionPreferencias);
             // 
             // FormularioPrincipal
             // 
