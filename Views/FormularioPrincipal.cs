@@ -27,11 +27,12 @@ namespace facturacion.Views
         {
             resX = Screen.PrimaryScreen.WorkingArea.Width;
             resY = Screen.PrimaryScreen.WorkingArea.Height;
-            Logger logger = new Logger();
-            logger.Log("Inicio Aplicación", 0, $"El equipo {Environment.MachineName}" +
+            var log = NLog.LogManager.GetCurrentClassLogger();
+            log.Debug($"El equipo {Environment.MachineName}" +
                 $" ({Environment.UserName}) con dirección ip: " +
                 $"{Dns.GetHostAddresses(Environment.MachineName).Where(i=> i.IsIPv6LinkLocal == false && i.IsIPv6Multicast == false && i.IsIPv6SiteLocal == false).FirstOrDefault().ToString()}" +
-                $" y MAC: {NetworkInterface.GetAllNetworkInterfaces().Where(n=> n.OperationalStatus == OperationalStatus.Up && n.NetworkInterfaceType != NetworkInterfaceType.Loopback).FirstOrDefault().GetPhysicalAddress()} ");
+                $" y MAC: {NetworkInterface.GetAllNetworkInterfaces().Where(n=> n.OperationalStatus == OperationalStatus.Up && n.NetworkInterfaceType != NetworkInterfaceType.Loopback).FirstOrDefault().GetPhysicalAddress()}" +
+                $" ha iniciado el programa.");
             IsMdiContainer = true;
                        
             InitializeComponent();

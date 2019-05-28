@@ -10,7 +10,6 @@ namespace facturacion.Business
 {
     public class Clientes : IClients
     {
-
         public Clientes()
         {
 
@@ -36,32 +35,11 @@ namespace facturacion.Business
             }
         }
 
-        /*public static ICollection getTipos()
-        {
-            FacturacionContext contextClientes = new FacturacionContext();
-            ICollection tipos;
-            if(contextClientes.Tipoclientes != null)
-            {
-                tipos = contextClientes.Tipoclientes.ToList();
-                contextClientes.Dispose();
-                return tipos;
-            }
-            else
-            {
-                contextClientes.Dispose();
-                return null;
-            }
-            
-        }*/
-        /*
-        public static TipoCliente GetTipoCliente(int id)
-        {
-            FacturacionContext contextTiposClientes = new FacturacionContext();
-            TipoCliente tipo = contextTiposClientes.Tipoclientes.Where(tc => tc.Tipo_Cliente_ID == id).FirstOrDefault();
-            return tipo;
-
-        }*/
-
+        
+        /// <summary>
+        /// Crea un nuevo cliente en la base de datos.
+        /// </summary>
+        /// <param name="cliente"> Objeto de tipo cliente que representa el cliente que va a ser creado. </param>
         public void NuevoCliente(Cliente cliente)
         {
             using (FacturacionContext context = new FacturacionContext())
