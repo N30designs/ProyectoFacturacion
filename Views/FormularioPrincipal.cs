@@ -16,6 +16,7 @@ namespace facturacion.Views
     {
         int resX = 1024;
         int resY = 768;
+        Form form; // Con esto limitamos que sólo exista un formulario mostrandose a la vez. 
 
         public int ResX { get => resX; set => resX = value; }
         public int ResY { get => resY; set => resY = value; }
@@ -71,12 +72,14 @@ namespace facturacion.Views
         /// <param name="e"></param>
         private void AccionAñadirClientes(object sender, EventArgs e)
         {
-            FormClientesAñadir form = new FormClientesAñadir()
+            if (form == null)
             {
-                MdiParent = this
-            };
-
-            form.Show();
+                FormClientesAñadir form = new FormClientesAñadir()
+                {
+                    MdiParent = this
+                };
+                form.Show();
+            }
         }
 
 
@@ -87,10 +90,13 @@ namespace facturacion.Views
         /// <param name="e"></param>
         private void AccionListarClientes(object sender, EventArgs e)
         {
-            FormClientesListar form = new FormClientesListar()
+            if (form == null)
             {
-                MdiParent = this
-            };
+                form = new FormClientesListar()
+                {
+                    MdiParent = this
+                };
+            }
 
             form.Show();
         }
@@ -103,12 +109,16 @@ namespace facturacion.Views
         /// <param name="e"></param>
         private void AccionPreferencias(object sender, EventArgs e)
         {
-            FormPreferencias form = new FormPreferencias()
+            if (form == null)
             {
-                MdiParent = this
-            };
+                form = new FormPreferencias()
+                {
+                    MdiParent = this
+                };
 
-            form.Show();
+                form.Show();
+            }
+           
         }
     }
 }

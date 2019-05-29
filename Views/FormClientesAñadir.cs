@@ -3,8 +3,7 @@ using System.Windows.Forms;
 using facturacion.Model;
 using facturacion.Business;
 using facturacion.Data;
-using System.Collections.Generic;
-using System.Windows.Documents;
+
 
 namespace facturacion.Views
 {
@@ -16,7 +15,7 @@ namespace facturacion.Views
         bool poblacionNueva = false;
         Clientes clientes = new Clientes();
         Poblaciones poblaciones = new Poblaciones();
-
+        NLog.Logger log;
         FacturacionContext context = new FacturacionContext();
 
         /// <summary>
@@ -25,6 +24,8 @@ namespace facturacion.Views
         public FormClientesAñadir()
         {
             InitializeComponent();
+            log = NLog.LogManager.GetCurrentClassLogger();
+            log.Debug("Iniciado nuevo formulario FormClientesAñadir");
         }
 
         /// <summary>
@@ -41,53 +42,68 @@ namespace facturacion.Views
             //Evaluaremos que la población no sea nueva y que los campos no esten vacios. 
             if(!poblacionNueva)
             {
-                c1.Nombre = tNombre.Text;
-                c1.Apellidos = $"{tApellido1.Text} {tApellido2.Text}";
-                //c1.TipoCliente <- Primero debemos rellenarlo, lo desactivo para probar
-                c1.CIF = tCif.Text;
-                c1.NombreFiscal = tNombreFiscal.Text;
-                if (tDireccion.TextLength > 1)
-                    c1.Domicilio = tDireccion.Text;
-                if (tNumero.TextLength > 1)
-                    c1.Numero = int.Parse(tNumero.Text);
-                if (tBloque.TextLength > 1)
-                    c1.Bloque = int.Parse(tBloque.Text);
-                if (tEscalera.TextLength > 1)
-                    c1.Escalera = int.Parse(tEscalera.Text);
-                if (tPortal.TextLength > 1)
-                    c1.Portal = int.Parse(tPortal.Text);
-                if (tPlanta.TextLength > 1)
-                    c1.Planta = int.Parse(tPlanta.Text);
-                if (tPuerta.TextLength > 1)
-                    c1.Puerta = tPuerta.Text;
+                if((String.IsNullOrEmpty(TPostal.Text)) || cPoblacion.SelectedIndex == -1 || cTipoPoblacion.SelectedIndex == -1 || cProvincia.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Todos los datos de la población deben ser completados.");
+                }
+                else
+                {
+                    try
+                    {
+                        c1.Nombre = tNombre.Text;
+                        c1.Apellidos = $"{tApellido1.Text} {tApellido2.Text}";
+                        c1.TipoCliente = clientes.TipoClienteID(int.Parse(cTipoCliente.SelectedValue.ToString()));
+                        c1.CIF = tCif.Text;
+                        c1.NombreFiscal = tNombreFiscal.Text;
+                        if (tDireccion.TextLength > 1)
+                            c1.Domicilio = tDireccion.Text;
+                        if (tNumero.TextLength > 1)
+                            c1.Numero = int.Parse(tNumero.Text);
+                        if (tBloque.TextLength > 1)
+                            c1.Bloque = int.Parse(tBloque.Text);
+                        if (tEscalera.TextLength > 1)
+                            c1.Escalera = int.Parse(tEscalera.Text);
+                        if (tPortal.TextLength > 1)
+                            c1.Portal = int.Parse(tPortal.Text);
+                        if (tPlanta.TextLength > 1)
+                            c1.Planta = int.Parse(tPlanta.Text);
+                        if (tPuerta.TextLength > 1)
+                            c1.Puerta = tPuerta.Text;
 
-                c1.Poblacion = poblaciones.BuscarID(int.Parse(cPoblacion.SelectedValue.ToString()));
+                        c1.Poblacion = poblaciones.BuscarID(int.Parse(cPoblacion.SelectedValue.ToString()));
 
-                if (tWeb.TextLength > 1)
-                    c1.Web = tWeb.Text;
-                if (tTelefono1.TextLength > 1)
-                    c1.Telefono1 = tTelefono1.Text;
-                if (tTelefono2.TextLength > 1)
-                    c1.Telefono2 = tTelefono2.Text;
-                if (tFax.TextLength > 1)
-                    c1.Fax = tFax.Text;
+                        if (tWeb.TextLength > 1)
+                            c1.Web = tWeb.Text;
+                        if (tTelefono1.TextLength > 1)
+                            c1.Telefono1 = tTelefono1.Text;
+                        if (tTelefono2.TextLength > 1)
+                            c1.Telefono2 = tTelefono2.Text;
+                        if (tFax.TextLength > 1)
+                            c1.Fax = tFax.Text;
 
-                if (tDescuento.TextLength > 1)
-                    c1.Descuento = int.Parse(tDescuento.Text);
-                if (tDiasPago.TextLength > 1)
-                    c1.DiasPago = int.Parse(tDiasPago.Text);
-                if (tIban.TextLength > 1)
-                    c1.Iban = tIban.Text;
-                if (tBic.TextLength > 1)
-                    c1.Bic = tBic.Text;
-                if (tIrpf.TextLength > 1)
-                    c1.Irpf = int.Parse(tIrpf.Text);
+                        if (tDescuento.TextLength > 1)
+                            c1.Descuento = int.Parse(tDescuento.Text);
+                        if (tDiasPago.TextLength > 1)
+                            c1.DiasPago = int.Parse(tDiasPago.Text);
+                        if (tIban.TextLength > 1)
+                            c1.Iban = tIban.Text;
+                        if (tBic.TextLength > 1)
+                            c1.Bic = tBic.Text;
+                        if (tIrpf.TextLength > 1)
+                            c1.Irpf = int.Parse(tIrpf.Text);
 
-                clientes.NuevoCliente(c1);
+                        clientes.NuevoCliente(c1);
 
-                MessageBox.Show("El cliente se ha guardado correctamente.");
+                        MessageBox.Show("El cliente se ha guardado correctamente.");
 
-                resetCampos();
+                        resetCampos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                
                 
             }
             else
@@ -117,44 +133,45 @@ namespace facturacion.Views
         /// <param name="e"></param>
         public void editarCPostal(object sender, EventArgs e)
         {
-            var p = new Poblaciones();
-            var poblacion = p.Buscar(TPostal.Text);
+            if(TPostal.TextLength != 0)
+            {
+                var p = new Poblaciones();
+                var poblacion = p.Buscar(TPostal.Text);
+                cPoblacion.DataSource = poblacion;
+                cPoblacion.ValueMember = "Poblacion_ID";
+                cPoblacion.DisplayMember = "Nombre";
+                cPoblacion.Enabled = true;
 
-            cPoblacion.DataSource = poblacion;
-            cPoblacion.ValueMember = "Poblacion_ID";
-            cPoblacion.DisplayMember = "Nombre";
-            cPoblacion.Enabled = true;
-           
-            
-
-            if(poblacion.Count > 1)
-            {
-                cPoblacion.DropDownStyle = ComboBoxStyle.DropDownList;
-                                
-            }
-            else if(poblacion.Count == 1)
-            {
-                cTipoPoblacion.Enabled = true;
-                cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
-                cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
-            }
-            else
-            {
-                DialogResult dr = MessageBox.Show("No se ha encontrado ninguna población con ese código postal" +
-                                " ¿Desea crear una nueva", "¡Atención!", MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes)
+                if (poblacion.Count > 1)
                 {
-                    cPoblacion.Enabled = true;
-                    cProvincia.Enabled = true;
+                    cPoblacion.DropDownStyle = ComboBoxStyle.DropDownList;
+                }
+                else if (poblacion.Count == 1)
+                {
                     cTipoPoblacion.Enabled = true;
-                    poblacionNueva = true;
+                    cTipoPoblacion.SelectedItem = poblaciones.TipoPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
+                    cProvincia.SelectedValue = poblaciones.ProvinciaOfPoblacion(int.Parse(cPoblacion.SelectedValue.ToString()));
                 }
                 else
                 {
-                    TPostal.Clear();
-                    MessageBox.Show("Por favor vuelva a introducir el código postal correcto");
+
+                    DialogResult dr = MessageBox.Show("No se ha encontrado ninguna población con ese código postal" +
+                                    " ¿Desea crear una nueva", "¡Atención!", MessageBoxButtons.YesNo);
+                    if (dr == DialogResult.Yes)
+                    {
+                        cPoblacion.Enabled = true;
+                        cProvincia.Enabled = true;
+                        cTipoPoblacion.Enabled = true;
+                        poblacionNueva = true;
+                    }
+                    else
+                    {
+                        TPostal.Clear();
+                        MessageBox.Show("Por favor vuelva a introducir el código postal correcto");
+                    }
                 }
             }
+            
         }
 
         /// <summary>
