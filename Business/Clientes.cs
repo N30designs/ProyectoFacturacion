@@ -30,8 +30,8 @@ namespace facturacion.Business
         {
             using (FacturacionContext context = new FacturacionContext())
             {
-                var logger = new Logger();
-                context.Database.Log = l => logger.Log("Listar Clientes", 0, l.ToString());
+                var logger = Log.NuevoLog();
+                context.Database.Log = l => log.Debug("Listar Clientes", 0, l.ToString());
                 var clientes = context.Clientes.ToList();
                 return clientes;
             }
@@ -46,8 +46,8 @@ namespace facturacion.Business
         {
             using (FacturacionContext context = new FacturacionContext())
             {
-                var logger = new Logger();
-                context.Database.Log = l => logger.Log("Nuevo Cliente", 0, l.ToString());
+                var logger = Log.NuevoLog();
+                context.Database.Log = l => log.Debug("Nuevo Cliente", 0, l.ToString());
                 
                 try
                 {

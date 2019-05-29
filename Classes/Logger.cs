@@ -3,9 +3,12 @@ using System.Diagnostics;
 using System.IO;
 
 
-namespace facturacion.Classes
+namespace facturacion.Descartado.Classes
 {
     /// <summary>
+    /// ¡¡¡ATENCIÓN!!!
+    /// Esta clase ha sido sustituida por la clase LOG, que en lugar de realizar las tareas de log manualmente 
+    /// hace uso del Framework NLOG para esta acción. 
     /// Clase encargada de guardar y mostrar los eventos de la aplicación.
     /// </summary>
     public class Logger

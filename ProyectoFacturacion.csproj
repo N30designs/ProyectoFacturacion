@@ -105,6 +105,7 @@
     <Compile Include="Business\Poblaciones.cs" />
     <Compile Include="Classes\ConexionDB.cs" />
     <Compile Include="Classes\Encrypt.cs" />
+    <Compile Include="Classes\Log.cs" />
     <Compile Include="Classes\Logger.cs" />
     <Compile Include="Classes\VariablesGlobales.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
@@ -187,7 +188,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="NLog.config">
+    <None Include="NLog.config.OLD">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="NLog.xsd">

@@ -28,7 +28,7 @@ namespace facturacion.Views
         {
             resX = Screen.PrimaryScreen.WorkingArea.Width;
             resY = Screen.PrimaryScreen.WorkingArea.Height;
-            var log = NLog.LogManager.GetCurrentClassLogger();
+            var log = Log.NuevoLog();
             log.Debug($"El equipo {Environment.MachineName}" +
                 $" ({Environment.UserName}) con dirección ip: " +
                 $"{Dns.GetHostAddresses(Environment.MachineName).Where(i=> i.IsIPv6LinkLocal == false && i.IsIPv6Multicast == false && i.IsIPv6SiteLocal == false).FirstOrDefault().ToString()}" +
