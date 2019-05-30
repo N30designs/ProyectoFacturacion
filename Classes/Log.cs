@@ -42,26 +42,54 @@ namespace facturacion.Classes
                 FileName = "logs/${shortdate}-LogFile.csv",
                 ArchiveNumbering = NLog.Targets.ArchiveNumberingMode.DateAndSequence,
                 ArchiveEvery = NLog.Targets.FileArchivePeriod.Day,
-                Layout = @"${shortdate};${pad:padding=5:inner=${level:uppercase=true}};${exception}${message}"
+                Layout = @"${shortdate};${date:format=HH\:mm\:ss};${pad:padding=5:inner=${level:uppercase=true}};${exception}${message}"
             };
 
             //Crea el destino event log
             var eventos = new EventLogTarget
             {
                 Name = "eventLog",
-                Layout = @"${shortdate};${pad:padding=5:inner=${level:uppercase=true}};${exception}${message}",
+                Layout = @"${date:format=HH\:mm\:ss};${pad:padding=5:inner=${level:uppercase=true}};${exception}${message}",
                 MachineName = ".",
                 Source = "MyAPP",
                 Log = "Application"
             };
 
+            //Crea el destino en SQL SERVER
+            var sql = new DatabaseTarget
+            {
+                Name = "sql",
+                DBProvider = "System.Data.SqlClient",
+                //ConnectionStringName = "CSFacturacion", //Otra opción de conexión. No puede convivir con el resto. 
+                //ConnectionString = "server=localhost\\SQLEXPRESS;Database=Logs;user id=sa;password=1234", //Si habilito este paramétro no es necesario DBHost, DBUserName, DBPassword, DBDatabase and DBProvider
+                DBHost = "localhost\\SQLEXPRESS",
+                DBDatabase = "Logs",
+                DBUserName = "SA",
+                DBPassword = "1234",//EVIDENTEMENTE EN UN ENTORNO REAL NO USARIA UNA CONTRASEÑA ASÍ
+                KeepConnection = false,
+                CommandType = System.Data.CommandType.Text,
+                CommandText = "INSERT INTO LOGS (ID, HOST, FECHA, TIPO, MENSAJE, LOGGER, EXCEPCION) " +
+                                "VALUES (NEXT VALUE FOR LOGS_ID, @HOST, @FECHA, @TIPO, @MENSAJE, @LOGGER, @EXCEPCION)",
+                Parameters =
+                {
+                   new DatabaseParameterInfo("@HOST", "${machinename}"),
+                   new DatabaseParameterInfo("@FECHA", "${date}"),
+                   new DatabaseParameterInfo("@TIPO", "${level}"),
+                   new DatabaseParameterInfo("@MENSAJE", "${message}"),
+                   new DatabaseParameterInfo("@LOGGER", "${logger}"),
+                   new DatabaseParameterInfo("@EXCEPCION", "${exception:tostring}")
+                }
+            };
+
             config.AddTarget(consoletarget);
             config.AddTarget(archivoLog);
             config.AddTarget(eventos);
+            config.AddTarget(sql);
 
             config.AddRuleForAllLevels(consoletarget);
             config.AddRuleForAllLevels(archivoLog);
             config.AddRuleForAllLevels(eventos); // Quizás habría que limitar la escritura a niveles > INFO. 
+            config.AddRuleForAllLevels(sql);
 
 
             LogManager.Configuration = config;

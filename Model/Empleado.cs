@@ -95,6 +95,11 @@ namespace facturacion.Model
 
         public string Observaciones { get; set; }
 
+        public string Usuario { get; set; }
+
+        public string Password { get; set; }
+
+
         public virtual Poblacion Poblacion { get; set; }
 
 
