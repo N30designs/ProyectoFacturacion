@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace facturacion.Model
     /// </summary>
     public enum TipoEmpleado {
         Vendedor = 1,
-        Reponedor =2,
-        Soporte =3
+        Reponedor = 2,
+        Soporte = 3,
+        Administrador  = 99
     };
 
     /// <summary>
@@ -55,22 +57,22 @@ namespace facturacion.Model
         public string Direccion { get; set; }
 
         
-        public int Numero { get; set; }
+        public int? Numero { get; set; }
 
         
-        public int Bloque { get; set; }
+        public int? Bloque { get; set; }
 
         
-        public int Escalera { get; set; }
+        public int? Escalera { get; set; }
 
        
-        public int Portal { get; set; }
+        public int? Portal { get; set; }
 
        
-        public int Planta { get; set; }
+        public int? Planta { get; set; }
 
        
-        public int Piso { get; set; }
+        public int? Piso { get; set; }
 
         
         public string Puerta { get; set; }
@@ -85,16 +87,18 @@ namespace facturacion.Model
         public DateTime Modificacion { get; set; }
 
         
-        public DateTime FechaAlta { get; set; }
+        public DateTime? FechaAlta { get; set; }
 
-        public DateTime FechaBaja { get; set; }
+        public DateTime? FechaBaja { get; set; }
 
-        public int BIC { get; set; }
+        public int? BIC { get; set; }
 
-        public decimal Salario { get; set; }
+        public decimal? Salario { get; set; }
 
         public string Observaciones { get; set; }
 
+        
+        [Required, Column(TypeName ="Varchar"), MaxLength(100)]
         public string Usuario { get; set; }
 
         public string Password { get; set; }

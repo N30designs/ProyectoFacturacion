@@ -54,6 +54,8 @@ namespace facturacion.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<Empleado>().Property(e => e.Usuario).HasMaxLength(100);
+            modelBuilder.Entity<Empleado>().HasIndex(e => e.Usuario).IsUnique();
                         
         }
 

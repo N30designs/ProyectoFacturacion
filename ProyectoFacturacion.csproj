@@ -99,9 +99,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Empleados.cs" />
     <Compile Include="Business\Clientes.cs" />
     <Compile Include="Business\IClients.cs" />
     <Compile Include="Business\IPoblaciones.cs" />
+    <Compile Include="Business\lEmpleados.cs" />
     <Compile Include="Business\Poblaciones.cs" />
     <Compile Include="Classes\ConexionDB.cs" />
     <Compile Include="Classes\Encrypt.cs" />
@@ -135,6 +137,18 @@
     <Compile Include="Migrations\201905241408344_postalNoObligatorio.cs" />
     <Compile Include="Migrations\201905241408344_postalNoObligatorio.Designer.cs">
       <DependentUpon>201905241408344_postalNoObligatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300953007_usuariosPasswords.cs" />
+    <Compile Include="Migrations\201905300953007_usuariosPasswords.Designer.cs">
+      <DependentUpon>201905300953007_usuariosPasswords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301005332_usuariosPasswords2.cs" />
+    <Compile Include="Migrations\201905301005332_usuariosPasswords2.Designer.cs">
+      <DependentUpon>201905301005332_usuariosPasswords2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905301122553_usuariosPasswords3.cs" />
+    <Compile Include="Migrations\201905301122553_usuariosPasswords3.Designer.cs">
+      <DependentUpon>201905301122553_usuariosPasswords3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
@@ -172,6 +186,12 @@
     </Compile>
     <Compile Include="Views\FormClientesListar.Designer.cs">
       <DependentUpon>FormClientesListar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormularioPrincipal.cs">
       <SubType>Form</SubType>
@@ -239,6 +259,7 @@
     <Content Include="Others\Diagrama16051.jpg" />
     <Content Include="Others\Diagrama300519.jpg" />
     <Content Include="Others\DiagramaInicial.jpg" />
+    <Content Include="Others\NotasTemporales.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905211004152_InitialCreate.resx">
@@ -259,11 +280,23 @@
     <EmbeddedResource Include="Migrations\201905241408344_postalNoObligatorio.resx">
       <DependentUpon>201905241408344_postalNoObligatorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300953007_usuariosPasswords.resx">
+      <DependentUpon>201905300953007_usuariosPasswords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301005332_usuariosPasswords2.resx">
+      <DependentUpon>201905301005332_usuariosPasswords2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905301122553_usuariosPasswords3.resx">
+      <DependentUpon>201905301122553_usuariosPasswords3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesAñadir.resx">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesListar.resx">
       <DependentUpon>FormClientesListar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>

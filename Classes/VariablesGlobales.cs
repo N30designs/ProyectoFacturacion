@@ -1,4 +1,5 @@
-﻿using System;
+﻿using facturacion.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace facturacion.Classes
     public static class VariablesGlobales
     {
         public const string nombrePrograma = "Proyecto Facturacion";
+        public static Empleado usuarioActivo;
         
     }
 }

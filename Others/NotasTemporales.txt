@@ -1,0 +1,3 @@
+﻿CREA AL USUARIO ADMINISTRADOR
+INSERT INTO Empleado(TipoEmpleado, Nombre, Apellido1, Apellido2, FechaNacimiento, Nif, Telefono1, Creacion, Modificacion, Usuario, Password)
+VALUES (99, 'Administrador', 'Administrador', 'Administrador', '01/01/1900', '1245678A', '123456789', GETDATE(), GETDATE(), 'Admin', '1234');

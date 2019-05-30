@@ -86,7 +86,24 @@ namespace facturacion.Data
 
             tiposCliente.ForEach(tc => context.Tipoclientes.Add(tc));
             context.SaveChanges();
-            
+
+            var empleados = new List<Empleado>
+            {
+                new Empleado
+                {
+                    TipoEmpleado = TipoEmpleado.Administrador,
+                    Nombre = "Administrador",
+                    Apellido1 = "Administrador",
+                    Apellido2 = "Administrador",
+                    FechaNacimiento = DateTime.Parse("01/01/1900"),
+                    Nif = "12345678A",
+                    Telefono1 = "123456789",
+                    Creacion = DateTime.Now,
+                    Modificacion = DateTime.Now,
+                    Usuario = "Admin",
+                    Password = "1234"
+                }
+            };
             
 
             base.Seed(context);
