@@ -47,6 +47,10 @@ namespace facturacion.Business
         /// <param name="busqueda">Cadena que indicará que corresponderá con el valor a buscar.</param>
         void Buscarclientes(string busqueda);
 
+        TipoCliente TipoClienteID(int id);
+
+        ICollection<TipoCliente> Tipos();
+
 
 
     }

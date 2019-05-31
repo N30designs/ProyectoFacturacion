@@ -22,7 +22,7 @@ namespace facturacion
                 case TypeBusiness.CarSell:
                     return new Clientes();
                 case TypeBusiness.TreeProduction:
-                    return null;
+                    return new ClientesBDRemota();
                     
             }
             return null;

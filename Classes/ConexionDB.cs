@@ -60,7 +60,7 @@ namespace facturacion.Classes
             }
             else
             {
-                resultado = null;
+                resultado = "name=CSFacturacion";
             }
 
             return resultado;

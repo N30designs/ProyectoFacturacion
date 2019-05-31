@@ -13,7 +13,7 @@ namespace facturacion.Views
     public partial class FormClientesAñadir : Form
     {
         bool poblacionNueva = false;
-        Clientes clientes = new Clientes();
+        IClients clientes = Factory.GetClientObject(TypeBusiness.TreeProduction);
         Poblaciones poblaciones = new Poblaciones();
         NLog.Logger log;
         FacturacionContext context = new FacturacionContext();
@@ -70,7 +70,9 @@ namespace facturacion.Views
                         if (tPuerta.TextLength > 1)
                             c1.Puerta = tPuerta.Text;
 
-                        c1.Poblacion = poblaciones.BuscarID(int.Parse(cPoblacion.SelectedValue.ToString()));
+                        c1.Poblacion_ID = int.Parse(cPoblacion.SelectedValue.ToString());
+
+                        //c1.Poblacion = poblaciones.BuscarID(int.Parse(cPoblacion.SelectedValue.ToString()));
 
                         if (tWeb.TextLength > 1)
                             c1.Web = tWeb.Text;

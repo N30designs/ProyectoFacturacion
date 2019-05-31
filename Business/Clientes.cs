@@ -14,7 +14,7 @@ namespace facturacion.Business
 
         public Clientes()
         {
-            var log = Log.NuevoLog();
+            log = Log.NuevoLog();
         }
                 
         public void Buscarclientes(string busqueda)
@@ -30,8 +30,8 @@ namespace facturacion.Business
         {
             using (FacturacionContext context = new FacturacionContext())
             {
-                var logger = Log.NuevoLog();
-                context.Database.Log = l => log.Debug("Listar Clientes", 0, l.ToString());
+                log = Log.NuevoLog();
+                context.Database.Log = l => log.Info(l.ToString());
                 var clientes = context.Clientes.ToList();
                 return clientes;
             }
@@ -41,21 +41,21 @@ namespace facturacion.Business
         /// <summary>
         /// Crea un nuevo cliente en la base de datos.
         /// </summary>
-        /// <param name="cliente"> Objeto de tipo cliente que representa el cliente que va a ser creado. </param>
+        /// <param name="cliente"> Objeto de tipo cliente que representa el cliente que va a ser creado.</param>
         public void NuevoCliente(Cliente cliente)
         {
             using (FacturacionContext context = new FacturacionContext())
             {
-                var logger = Log.NuevoLog();
-                context.Database.Log = l => log.Debug("Nuevo Cliente", 0, l.ToString());
+                log = Log.NuevoLog();
+                context.Database.Log = l => log.Info(l.ToString());
                 
                 try
-                {
+                {                    
                     cliente.Creacion = DateTime.Now;
                     cliente.Modificacion = DateTime.Now;
                     
-                    context.Clientes.Add(cliente);
                     
+                    context.Clientes.Add(cliente);
                     context.SaveChangesAsync().Wait();                    
                 }
                 catch (DbEntityValidationException ex)
@@ -86,7 +86,7 @@ namespace facturacion.Business
                             .SelectMany(x => x.ValidationErrors)
                             .Select(x => x.ErrorMessage);                   
 
-                    var log = NLog.LogManager.GetCurrentClassLogger();
+                    log = NLog.LogManager.GetCurrentClassLogger();
                     foreach (var e in errorMessages)
                     {                        
                         System.Windows.Forms.MessageBox.Show(e);
@@ -94,7 +94,10 @@ namespace facturacion.Business
                     log.Error(string.Concat("Se han producido los siguientes errores al crear el cliente:", string.Join(" ", errorMessages)));
 
                     throw new Exception("Algunos campos obligatorios se encuentran incompletos");
-                    
+                }
+                catch (AggregateException ex)
+                {
+                    log.Error(ex.Message, ex);
                 }
             }
         }

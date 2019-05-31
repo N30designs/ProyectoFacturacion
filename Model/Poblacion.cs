@@ -1,4 +1,6 @@
 ﻿
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace facturacion.Model
@@ -32,5 +34,6 @@ namespace facturacion.Model
         public string  Cpostal { get; set; }
                 
         public int? Padre { get; set; }
+
     }
 }

@@ -96,7 +96,10 @@ namespace facturacion.Model
 
         public virtual TipoCliente TipoCliente{ get; set; }
 
-        public virtual Poblacion Poblacion { get; set; }
+        [ForeignKey("Poblacion")]
+        public int Poblacion_ID { get; set; }
+
+        public Poblacion Poblacion { get; set; }
 
     }
 }

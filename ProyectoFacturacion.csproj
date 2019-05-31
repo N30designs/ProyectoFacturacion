@@ -99,6 +99,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\ClientesBDRemota.cs" />
     <Compile Include="Business\Empleados.cs" />
     <Compile Include="Business\Clientes.cs" />
     <Compile Include="Business\IClients.cs" />
@@ -149,6 +150,10 @@
     <Compile Include="Migrations\201905301122553_usuariosPasswords3.cs" />
     <Compile Include="Migrations\201905301122553_usuariosPasswords3.Designer.cs">
       <DependentUpon>201905301122553_usuariosPasswords3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905311015094_pruebaCambioCliente.cs" />
+    <Compile Include="Migrations\201905311015094_pruebaCambioCliente.Designer.cs">
+      <DependentUpon>201905311015094_pruebaCambioCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\DetalleFactura.cs" />
@@ -288,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905301122553_usuariosPasswords3.resx">
       <DependentUpon>201905301122553_usuariosPasswords3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905311015094_pruebaCambioCliente.resx">
+      <DependentUpon>201905311015094_pruebaCambioCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormClientesAñadir.resx">
       <DependentUpon>FormClientesAñadir.cs</DependentUpon>
