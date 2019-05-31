@@ -13,7 +13,7 @@ namespace facturacion.Data
     /// </summary>
     class FacturacionContext : DbContext
     {
-        public FacturacionContext() : base()
+        public FacturacionContext() : base(ConexionDB.Conexion())
         {
 
         }

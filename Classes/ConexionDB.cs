@@ -27,16 +27,35 @@ namespace facturacion.Classes
         /// <returns>ConnectionString para EF con la base de datos a crear (o utilizar) </returns>
         public static string Conexion()
         {
-
+            var log = Log.NuevoLog();
 
             string resultado;
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\ProyectoFactuacion\Preferencias");
             
-            
-            if ((key == null) || (key.GetValue("DBServer") == null) || (key.GetValue("DBDatabase") == null) || key.GetValue("DBLocal").Equals(1))
+            if ((key == null) || (key.GetValue("DBServer") == null) || (key.GetValue("DBDatabase") == null))
             {
-                resultado = "name=CSFacturacion";
+                log.Fatal("Uno o mas valores de la base de datos se encuentra incompleto, y no se ha establecido una conexión local.");
 
+                System.Windows.Forms.MessageBox.Show("No se ha especificado ningún valor de conexión a la base de datos," +
+                                                     "ni se ha indcado que se trate de una base de datos local.\n" +
+                                                     "Por favor revise su configuración y vuelva a intentarlo.",
+                                                     "Error de configuración", 
+                                                     System.Windows.Forms.MessageBoxButtons.OK,System.Windows.Forms.MessageBoxIcon.Error);
+                resultado = null;
+
+            }
+            else if (key.GetValue("DBLocal").Equals(1))
+            {
+
+                SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
+                sb.DataSource = "(LocalDb)\\MSSQLLocalDB";
+                sb.InitialCatalog = VariablesGlobales.nombrePrograma.Trim();
+                sb.MultipleActiveResultSets = true;
+                sb.IntegratedSecurity = true;
+                sb.ApplicationName = VariablesGlobales.nombrePrograma.Trim();   
+
+                resultado = sb.ConnectionString;
+                //resultado = "Data Source = (LocalDB)\\MSSQLLocalDB; Integrated Security = True; Connect Timeout = 30";
 
             }
             else

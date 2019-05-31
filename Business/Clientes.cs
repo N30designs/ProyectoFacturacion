@@ -14,7 +14,7 @@ namespace facturacion.Business
 
         public Clientes()
         {
-            log = NLog.LogManager.GetCurrentClassLogger();
+            var log = Log.NuevoLog();
         }
                 
         public void Buscarclientes(string busqueda)

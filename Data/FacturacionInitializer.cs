@@ -104,6 +104,9 @@ namespace facturacion.Data
                     Password = "1234"
                 }
             };
+
+            empleados.ForEach(emp => context.Empleados.Add(emp));
+            context.SaveChanges();
             
 
             base.Seed(context);

@@ -51,7 +51,7 @@
             this.tUsuario.Location = new System.Drawing.Point(15, 40);
             this.tUsuario.Name = "tUsuario";
             this.tUsuario.Size = new System.Drawing.Size(192, 20);
-            this.tUsuario.TabIndex = 1;
+            this.tUsuario.TabIndex = 0;
             // 
             // lPassword
             // 
@@ -61,7 +61,6 @@
             this.lPassword.Size = new System.Drawing.Size(81, 13);
             this.lPassword.TabIndex = 0;
             this.lPassword.Text = "CONTRASEÑA";
-            this.lPassword.Click += new System.EventHandler(this.Label1_Click);
             // 
             // tPassword
             // 
@@ -69,7 +68,6 @@
             this.tPassword.Name = "tPassword";
             this.tPassword.Size = new System.Drawing.Size(192, 20);
             this.tPassword.TabIndex = 1;
-            this.tPassword.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // cbRecordar
             // 
@@ -86,9 +84,10 @@
             this.bCancelar.Location = new System.Drawing.Point(12, 176);
             this.bCancelar.Name = "bCancelar";
             this.bCancelar.Size = new System.Drawing.Size(75, 23);
-            this.bCancelar.TabIndex = 3;
+            this.bCancelar.TabIndex = 4;
             this.bCancelar.Text = "Cancelar";
             this.bCancelar.UseVisualStyleBackColor = true;
+            this.bCancelar.Click += new System.EventHandler(this.BCancelar_Click);
             // 
             // bAceptar
             // 
@@ -98,7 +97,7 @@
             this.bAceptar.TabIndex = 3;
             this.bAceptar.Text = "Aceptar";
             this.bAceptar.UseVisualStyleBackColor = true;
-            this.bAceptar.Click += new System.EventHandler(this.BAceptar_Click);
+            this.bAceptar.Click += new System.EventHandler(this.accionAceptar);
             // 
             // FormLogin
             // 
