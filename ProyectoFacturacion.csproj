@@ -108,7 +108,7 @@
     <Compile Include="Classes\ConexionDB.cs" />
     <Compile Include="Classes\Encrypt.cs" />
     <Compile Include="Classes\Log.cs" />
-    <Compile Include="Classes\Logger.cs" />
+    <None Include="Classes\Logger.cs.OLD" />
     <Compile Include="Classes\VariablesGlobales.cs" />
     <Compile Include="Data\FacturacionContext.cs" />
     <Compile Include="Data\FacturacionInitializer.cs" />

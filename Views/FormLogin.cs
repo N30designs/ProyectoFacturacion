@@ -1,5 +1,6 @@
 ﻿using facturacion.Business;
 using facturacion.Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,23 @@ namespace facturacion.Views
         {
             log = Log.NuevoLog();
             log.Debug("El formulario de login se ha cargado correctamente.");
+
+            RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\ProyectoFactuacion\Login");
+            try
+            {
+                if (key.GetValue("User").ToString().Length > 1 && key.GetValue("Password").ToString().Length > 1)
+                {
+                    tUsuario.Text = Encrypt.DesencriptaBase64(key.GetValue("User").ToString());
+                    tPassword.Text = Encrypt.DesencriptaBase64(key.GetValue("Password").ToString());
+                    if (key.GetValue("SaveLogin").ToString().Equals("1"))
+                        cbRecordar.Checked = true;
+                }
+            }
+            catch(NullReferenceException ex)
+            {
+                log.Debug("No existen datos de login guardados.",ex);
+            }
+
         }
 
 
@@ -48,6 +66,28 @@ namespace facturacion.Views
         private void accionAceptar(object sender, EventArgs e)
         {
             Empleados emp = new Empleados();
+            if (cbRecordar.Checked)
+            {
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\ProyectoFactuacion\Login");
+                key.SetValue("User", Encrypt.EncriptaBase64(tUsuario.Text));
+                key.SetValue("Password", Encrypt.EncriptaBase64(tPassword.Text));
+                key.SetValue("SaveLogin", 1);
+                
+                key.Close();
+
+                log.Info("Se ha actualizado la información del usuario en el registro");
+            }
+            else
+            {
+                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\ProyectoFactuacion\Login");
+                key.SetValue("User", "");
+                key.SetValue("Password", "");
+                key.SetValue("SaveLogin", 0);
+                key.Close();
+
+                log.Info("Se ha eliminado la información del usuario del registro.");
+            }
+
             if(String.IsNullOrEmpty(tUsuario.Text)|| String.IsNullOrEmpty(tPassword.Text))
             {
                 log.Info("El usuario ha intentado realizar login sin introducir los valores usuario o contraseña." +
