@@ -64,24 +64,7 @@ namespace facturacion.Classes
             }
 
             return resultado;
-            //SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
-            //sb.DataSource = "(LocalDb)\\MSSQLLocalDB";
-            //sb.InitialCatalog = VariablesGlobales.nombrePrograma.Trim();
-            //sb.MultipleActiveResultSets = true;
-            //sb.IntegratedSecurity = true;
-            //sb.ApplicationName = VariablesGlobales.nombrePrograma;
-
-            //EntityConnectionStringBuilder eb = new EntityConnectionStringBuilder();
-            //eb.Provider = "System.Data.SqlClient";
-            ////eb.Metadata = $"res://*/{VariablesGlobales.nombrePrograma.Trim()}.csdl|" +
-            ////                $"res://*/{VariablesGlobales.nombrePrograma.Trim()}.ssdl|" +
-            ////                $"res://*/{VariablesGlobales.nombrePrograma.Trim()}.msl";
-            //eb.ProviderConnectionString = sb.ToString();
-
-
-            //return eb.ConnectionString;
-
-            //return "Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=aspnet-MvcMovie;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\Movies.mdf";
+           
         }
     }
 }

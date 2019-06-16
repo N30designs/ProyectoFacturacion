@@ -84,12 +84,12 @@ namespace facturacion.Classes
             config.AddTarget(consoletarget);
             config.AddTarget(archivoLog);
             config.AddTarget(eventos);
-            config.AddTarget(sql);
+            //config.AddTarget(sql);
 
             config.AddRuleForAllLevels(consoletarget);
             config.AddRuleForAllLevels(archivoLog);
             config.AddRuleForAllLevels(eventos); // Quizás habría que limitar la escritura a niveles > INFO. 
-            config.AddRuleForAllLevels(sql);
+            //config.AddRuleForAllLevels(sql);
 
 
             LogManager.Configuration = config;
